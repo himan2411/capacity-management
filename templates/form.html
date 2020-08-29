@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Home page</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/style.css">
+        <script src="../static/main.js"></script>
+    </head>
+    <body>
+        <div class="testbox">
+            <form action="http://localhost:5555/supply" method = "POST" enctype = "multipart/form-data">
+            <h1>Resource Requirements</h1>  
+            <div style="padding-top: 3px;">
+              <select name="requestor_serviceline" onchange="myFunction()">
+                <option value="ServiceLine1" selected>ServiceLine1</option>
+                <option value="ServiceLine2">ServiceLine2</option>
+                <option value="ServiceLine3">ServiceLine3</option>
+              </select>
+              <select name="requestor_sub_serviceline">
+                <option value="SubServiceLine1" selected>SubServiceLine1</option>
+                <option value="SubServiceLine2">SubServiceLine2</option>
+                <option value="SubServiceLine3">SubServiceLine3</option>
+                <option value="SubServiceLine4">SubServiceLine4</option>
+              </select>
+              <select name="requestor_smu">
+                <option value="SMU1" selected>SMU1</option>
+                <option value="SMU2">SMU2</option>
+                <option value="SMU3">SMU3</option>
+              </select>
+              </div>
+              <input type="text" name="job_title" style="margin-top: 5px; margin-bottom: 5px;" placeholder="Job Title"/>
+              <div class="title-block">
+                <input class="name" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="functional_skill_1" placeholder="Functional skill" />
+                <input class="name" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="functional_skill_2" placeholder="Functional skill" />
+                <input class="name" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="functional_skill_3" placeholder="Functional skill" />
+              </div>
+              <div class="title-block">
+                <input class="name" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="techincal_skill_1" placeholder="Techincal skill" />
+                <input class="name" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="techincal_skill_2" placeholder="Techincal skill" />
+                <input class="name" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="techincal_skill_3" placeholder="Techincal skill" />
+              </div>
+              <div class="title-block">
+                <input class="name" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="process_skill_1" placeholder="Process skill" />
+                <input class="name" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="process_skill_2" placeholder="Process skill" />
+                <input class="name" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="process_skill_3" placeholder="Process skill" />
+              </div>
+              <h4>Location<span>*</span></h4>
+              <div class="title-block">
+                <input class="name" type="text" name="country" placeholder="Country" />
+                <input class="name" type="text" name="location" placeholder="City" />
+                <input class="name" type="text" name="alternate_location" placeholder="Alternate" />
+              </div>
+              <h4>Experience & Vacancies<span>*</span></h4>
+              <div class="title-block">
+                <input class="name" type="text" name="experience" placeholder="Min. Exp" />
+                <input class="name" type="text" name="rank" placeholder="Rank Level" />
+                <input class="name" type="text" name="required_resources" placeholder="Vacancy" />
+              </div>
+              <div class="slidecontainer"  >
+                <p>Location Wieght&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experience weight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bench Ageing Weight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank Weight</p>
+                <input type="range" min="1" max="100" value="50" name= "location_weight" class="slider_orig" style="width: 100px; padding: 0px;" id="myRange_1">
+                <input type="range" min="1" max="100" value="50" name= "experience_weight" class="slider_orig" style="width: 100px; margin-left: 30px; padding: 0px;" id="myRange_2">
+                <input type="range" min="1" max="100" value="50" name= "bench_weight" class="slider_orig" style="width: 100px; margin-left: 54px; padding: 0px;" id="myRange_3">
+                <input type="range" min="1" max="100" value="50" name= "rank_weight" class="slider_orig" style="width: 100px; margin-left: 54px; padding: 0px;" id="myRange_7">
+            </div>
+            <div class="slidecontainer"  >
+                <p>Technical Skill Wieght&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functional Skill wieght&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process Skill Wieght</p>
+                <input type="range" min="1" max="100" value="50" name= "technical_weight" class="slider_orig" style="width: 100px; padding: 0px;" id="myRange_4">
+                <input type="range" min="1" max="100" value="50" name= "functional_weight" class="slider_orig" style="width: 100px;margin-left: 50px;padding: 0px;" id="myRange_5">
+                <input type="range" min="1" max="100" value="50" name= "process_weight" class="slider_orig" style="width: 100px;margin-left: 77px;padding: 0px;" id="myRange_6">
+            </div>
+              <div class="btn-block"></div>
+                <button type="submit" >Send Request</button>
+              </div>
+            </form>
+          </div>    
+          {% if data %}
+            <img src="static/{{ license_back_name }}" style="max-width: 100%; max-height: 100%;" class="upload-icon" />
+          {% endif %}           
+    </body>
+</html>

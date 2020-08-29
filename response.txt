@@ -1,0 +1,50 @@
+# Demand
+{"requestor_serviceline": "ServiceLine1", "requestor_sub_serviceline": "SubServiceLine3", "requestor_smu": "SMU2", "job_title": "financial risk analyst", "functional_skill_1": "risk analysis", "functional_skill_2": "analytics", "functional_skill_3": "accounting", "techincal_skill_1": "microsoft office", "techincal_skill_2": "sdlc", "techincal_skill_3": "", "process_skill_1": "communication", "process_skill_2": "documentation", "process_skill_3": "team skill", "country": "india", "location": "bangalore", "alternate_location": "", "experience": "8", "rank": "rank_3", "required_resources": "1", "location_weight": "30", "experience_weight": "10", "bench_weight": "1", "rank_weight": "10", "technical_weight": "10", "functional_weight": "30", "process_weight": "10"}
+
+Results
+-----------------------------------------------------------------------------------------------
+empid 		 fitment% 		 serviceline 		 sub_service_line 	 smu
+-----------------------------------------------------------------------------------------------
+employee_5 		 53.86 		 serviceline1 		 subserviceline3 	 smu1
+employee_10 	 40.5 		 serviceline1 		 subserviceline4 	 smu1
+employee_12 	 38.5 		 serviceline3 		 subserviceline2 	 smu2
+employee_13 	 29.36 		 serviceline1 		 subserviceline1 	 smu1
+employee_11 	 28.8 		 serviceline1 		 subserviceline1 	 smu2
+employee_1 		 21.4 		 serviceline1 		 subserviceline1 	 smu1
+employee_3 		 8.66 		 serviceline3 		 subserviceline4 	 smu1
+employee_4 		 8.66 		 serviceline1 		 subserviceline2 	 smu1
+employee_2 		 8.5 		 serviceline2 		 subserviceline2 	 smu1
+employee_9 		 8.33 		 serviceline1 		 subserviceline1 	 smu1
+employee_7 		 6.83 		 serviceline3 		 subserviceline2 	 smu3
+employee_8 		 4.83 		 serviceline1 		 subserviceline1 	 smu3
+# Demand
+{"requestor_serviceline": "ServiceLine1", "requestor_sub_serviceline": "SubServiceLine3", "requestor_smu": "SMU2", "job_title": "financial risk analyst", "functional_skill_1": "risk analysis", "functional_skill_2": "analytics", "functional_skill_3": "accounting", "techincal_skill_1": "microsoft office", "techincal_skill_2": "sdlc", "techincal_skill_3": "", "process_skill_1": "communication", "process_skill_2": "documentation", "process_skill_3": "team skill", "country": "india", "location": "bangalore", "alternate_location": "", "experience": "8", "rank": "rank_3", "required_resources": "1", "location_weight": "30", "experience_weight": "10", "bench_weight": "1", "rank_weight": "10", "technical_weight": "10", "functional_weight": "30", "process_weight": "10"}
+
+Results
+-----------------------------------------------------------------------------------------------
+empid 		 fitment% 		 serviceline 		 sub_service_line 	 smu
+-----------------------------------------------------------------------------------------------
+employee_5 		 53.86 		 serviceline1 		 subserviceline3 	 smu1
+employee_10 	 40.5 		 serviceline1 		 subserviceline4 	 smu1
+employee_13 	 29.36 		 serviceline1 		 subserviceline1 	 smu1
+employee_11 	 28.8 		 serviceline1 		 subserviceline1 	 smu2
+employee_1 		 21.4 		 serviceline1 		 subserviceline1 	 smu1
+employee_4 		 8.66 		 serviceline1 		 subserviceline2 	 smu1
+employee_9 		 8.33 		 serviceline1 		 subserviceline1 	 smu1
+employee_8 		 4.83 		 serviceline1 		 subserviceline1 	 smu3
+employee_12      38.5 		 serviceline3 		 subserviceline2 	 smu2
+employee_3 		 8.66 		 serviceline3 		 subserviceline4 	 smu1
+employee_2 		 8.5 		 serviceline2 		 subserviceline2 	 smu1
+employee_7 		 6.83 		 serviceline3 		 subserviceline2 	 smu3
+
+
+
+empid
+%
+smu info
+employee's skill technical, functional, process with skill level
+experience
+emp rank
+location
+bench ageing
+

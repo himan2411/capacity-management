@@ -1,0 +1,724 @@
+[
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "cloud technology",
+      "sub_unit_3": "containers",
+      "skill": "docker",
+      "alternate_skill_kws":["kubernetes"]
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "cloud technology",
+      "sub_unit_3": "containers",
+      "skill": "kubernetes"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "cloud technology",
+      "sub_unit_3": "paas",
+      "skill": "database management"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "cloud technology",
+      "sub_unit_3": "paas",
+      "skill": "no sql"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "cloud technology",
+      "sub_unit_3": "paas",
+      "skill": "application development"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "programming",
+      "sub_unit_3": "scripting",
+      "skill": "python"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "programming",
+      "sub_unit_3": "scripting",
+      "skill": "shell script"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "programming",
+      "sub_unit_3": "sql",
+      "skill": ""
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "programming",
+      "sub_unit_3": "scripting",
+      "skill": "power shell"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "platform",
+      "sub_unit_3": "cloud",
+      "skill": "azure"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "platform",
+      "sub_unit_3": "windows servers",
+      "skill": "administration"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "platform",
+      "sub_unit_3": "cloud",
+      "skill": "aws"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "platform",
+      "sub_unit_3": "unix",
+      "skill": "administration"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "web technologies",
+      "sub_unit_3": "java",
+      "skill": ""
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "web technologies",
+      "sub_unit_3": "c#.net",
+      "skill": ""
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "web technologies",
+      "sub_unit_3": "web development",
+      "skill": "react"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "web technologies",
+      "sub_unit_3": "web development",
+      "skill": "angular"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "data warehousing",
+      "sub_unit_3": "etl",
+      "skill": "ibm datastage"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "data warehousing",
+      "sub_unit_3": "sap hana",
+      "skill": ""
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "data warehousing",
+      "sub_unit_3": "business intelligence",
+      "skill": "power bi"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "data warehousing",
+      "sub_unit_3": "business intelligence",
+      "skill": "sap bo"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "data warehousing",
+      "sub_unit_3": "etl",
+      "skill": "ssis"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "emerging trends",
+      "sub_unit_3": "artificial intelligence",
+      "skill": "machine learning"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "emerging trends",
+      "sub_unit_3": "artificial intelligence",
+      "skill": "deep learning"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "emerging trends",
+      "sub_unit_3": "analytics",
+      "skill": "data visualisation"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "emerging trends",
+      "sub_unit_3": "analytics",
+      "skill": "predictive analytics"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "emerging trends",
+      "sub_unit_3": "rpa",
+      "skill": ""
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "emerging trends",
+      "sub_unit_3": "mixed reality",
+      "skill": ""
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "emerging trends",
+      "sub_unit_3": "augmented and virtual reality",
+      "skill": ""
+    },
+    {
+      "unit": "unit 2",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "architecture",
+      "sub_unit_3": "cloud native architecture",
+      "skill": ""
+    },
+    {
+      "unit": "unit 2",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "architecture",
+      "sub_unit_3": "solution architecture",
+      "skill": ""
+    },
+    {
+      "unit": "unit 2",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "architecture",
+      "sub_unit_3": "data architecture",
+      "skill": ""
+    },
+    {
+      "unit": "unit 2",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "architecture",
+      "sub_unit_3": "microservices architecture",
+      "skill": ""
+    },
+    {
+      "unit": "unit 2",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "design",
+      "sub_unit_3": "infrastructure design",
+      "skill": ""
+    },
+    {
+      "unit": "unit 2",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "design",
+      "sub_unit_3": "solution design",
+      "skill": ""
+    },
+    {
+      "unit": "unit 2",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "architecture",
+      "sub_unit_3": "technical architecture",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "operations",
+      "skill": "change management"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "operations",
+      "skill": "incident management"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "operations",
+      "skill": "problem management"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "operations",
+      "skill": "sla management"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "operations",
+      "skill": "escalation management"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "operations",
+      "skill": "it operations management"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "operations",
+      "skill": "production support"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "it service management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "it portfolio management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "methodologies",
+      "skill": "itil"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "service delivery",
+      "sub_unit_3": "pmo",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "it governance",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "execution",
+      "skill": "agile project management"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "methodologies",
+      "skill": "iterative"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "managemnt",
+      "sub_unit_3": "methodologies",
+      "skill": "sdlc"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "methodologies",
+      "skill": "agile"
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "process improvement",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "it vendor management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "it strategy management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "agile coach",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "scrum master",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "application life cycle management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "agile leadership",
+      "skill": ""
+    },
+    {
+      "unit": "unit 3",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "management",
+      "sub_unit_3": "business development",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business development",
+      "sub_unit_3": "stake holder management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business development",
+      "sub_unit_3": "relationship management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business development",
+      "sub_unit_3": "account management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business development",
+      "sub_unit_3": "proposal management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business consulting",
+      "sub_unit_3": "presales consulting",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business consulting",
+      "sub_unit_3": "bid management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business consulting",
+      "sub_unit_3": "bid strategy",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business consulting",
+      "sub_unit_3": "brand management",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "budget management",
+      "sub_unit_3": "budget analysis",
+      "skill": "budget preparation"
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "budget management",
+      "sub_unit_3": "budget analysis",
+      "skill": "budget oversight and tracking"
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "budget management",
+      "sub_unit_3": "budget analysis",
+      "skill": "estimating"
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "budget management",
+      "sub_unit_3": "budget analysis",
+      "skill": "costing"
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business transformation",
+      "sub_unit_3": "programme leadership",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business transformation",
+      "sub_unit_3": "programme delivery",
+      "skill": ""
+    },
+    {
+      "unit": "unit 4",
+      "sub_unit_1": "management",
+      "sub_unit_2": "business transformation",
+      "sub_unit_3": "change management",
+      "skill": "change strategy"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "assessment",
+      "sub_unit_3": "business case building",
+      "skill": ""
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "assessment",
+      "sub_unit_3": "forecasting",
+      "skill": ""
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "process",
+      "sub_unit_3": "accounting",
+      "skill": "invoice discounting"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "process",
+      "sub_unit_3": "accounting",
+      "skill": "revenue management"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "process",
+      "sub_unit_3": "accounting",
+      "skill": "internal audit"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "process",
+      "sub_unit_3": "accounting",
+      "skill": "external audit"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "process",
+      "sub_unit_3": "reporting",
+      "skill": "data analysis"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "process",
+      "sub_unit_3": "reporting",
+      "skill": "management reporting"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "process",
+      "sub_unit_3": "reporting",
+      "skill": "enterprise risk analysis"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "process",
+      "sub_unit_3": "planning",
+      "skill": "budgeting"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "process",
+      "sub_unit_3": "planning",
+      "skill": "revenue planning"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "process",
+      "sub_unit_3": "planning",
+      "skill": "process automation"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "operations",
+      "sub_unit_3": "analysis",
+      "skill": "finance operational reporting"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "operations",
+      "sub_unit_3": "analysis",
+      "skill": "cash flow analysis"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "operations",
+      "sub_unit_3": "analysis",
+      "skill": "capital management analysis"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "business process improvement",
+      "sub_unit_3": "process control",
+      "skill": "lean six sigma"
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "tools",
+      "sub_unit_3": "advanced excel",
+      "skill": ""
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "tools",
+      "sub_unit_3": "sql",
+      "skill": ""
+    },
+    {
+      "unit": "unit 5",
+      "sub_unit_1": "finance",
+      "sub_unit_2": "tools",
+      "sub_unit_3": "microsoft office",
+      "skill": "microsoft excel"
+    },
+    {
+      "unit": "unit 6",
+      "sub_unit_1": "business analysis",
+      "sub_unit_2": "requirement analysis",
+      "sub_unit_3": "",
+      "skill": ""
+    },
+    {
+      "unit": "unit 6",
+      "sub_unit_1": "business analysis",
+      "sub_unit_2": "critical analysis",
+      "sub_unit_3": "problem solving",
+      "skill": ""
+    },
+    {
+      "unit": "unit 6",
+      "sub_unit_1": "business analysis",
+      "sub_unit_2": "business process analysis",
+      "sub_unit_3": "",
+      "skill": ""
+    },
+    {
+      "unit": "unit 7",
+      "sub_unit_1": "process",
+      "sub_unit_2": "soft skills",
+      "sub_unit_3": "presentation skills",
+      "skill": ""
+    },
+    {
+      "unit": "unit 7",
+      "sub_unit_1": "process",
+      "sub_unit_2": "soft skills",
+      "sub_unit_3": "effective communication",
+      "skill": ""
+    },
+    {
+      "unit": "unit 7",
+      "sub_unit_1": "process",
+      "sub_unit_2": "groupdynamics",
+      "sub_unit_3": "interpersonal communication",
+      "skill": ""
+    },
+    {
+      "unit": "unit 7",
+      "sub_unit_1": "process",
+      "sub_unit_2": "groupdynamics",
+      "sub_unit_3": "team play",
+      "skill": ""
+    },
+    {
+      "unit": "unit 7",
+      "sub_unit_1": "process",
+      "sub_unit_2": "cognitive skills",
+      "sub_unit_3": "analytical skill",
+      "skill": ""
+    },
+    {
+      "unit": "unit 7",
+      "sub_unit_1": "process",
+      "sub_unit_2": "cognitive skills",
+      "sub_unit_3": "critical problem solving",
+      "skill": ""
+    }
+  ]
