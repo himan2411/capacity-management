@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, send_from_directory, request
 from werkzeug.utils import secure_filename
 import logging, os, json, traceback, random, subprocess, shutil
 from get_mapped_employees import *
+import random
+import pandas as pd
 app = Flask(__name__)
 
 
@@ -55,13 +57,18 @@ def supply():
 @app.route('/forward', methods = ['POST'])
 def forward():
     if request.method == 'POST':
-        try:
-            form = request.form.to_dict()
-            for selected_emp in form.keys():
-                print(selected_emp)
-        except:
-            pass
-    return render_template("form.html")
+        existing_table = pd.read_csv("item_item.csv")
+        form = request.form.to_dict()
+        req_id = random.randint(1,100000)
+        ratings_dict = { "request": [req_id]* (len(form.keys())-2),
+        "item": [i for i in form.keys()][:-2]
+        }
+        new_df = pd.DataFrame(ratings_dict)
+        existing_table = existing_table.append(new_df)  
+        print(existing_table)  
+        existing_table.to_csv("item_item.csv",index=False,header=True)
+        print([i for i in form.keys()][:-1])
+    return render_template("index.html",data= " ".join([i for i in form.keys()][:-1]))
 
 if __name__ == '__main__':
     app.run()

@@ -69,13 +69,8 @@ def get_skill_branches(
         "functional"), matched_skills.get("process")
 
 
-def match_demand_skills(
-        emp_id,
-        each_emp_skills,
-        skill_branches,
-        match_dict,
-        serviceline_weightage):
-        """
+def match_demand_skills(emp_id,each_emp_skills,skill_branches,match_dict,serviceline_weightage):
+    """
         Assigns the match % by mapping skills from demand to each employee.
 
         Args:
@@ -84,16 +79,12 @@ def match_demand_skills(
             skill_branches(dict): dict object of skill branches obtained from demand.
             match_dict(dict): dict onject of the calculated fitment %.
             serviceline_weightage(dict): dict object of the weightage obtained from demand.
-        """
+    """
     match_percentage = match_dict
     for branch_name, each_branch in skill_branches.items():
         for each_skill in each_branch:
             for each_emp_skill in each_emp_skills:
-                if each_skill.get("unit") in each_emp_skill.get("primary_unit")
-                    and each_skill.get("sub_unit_1") in each_emp_skill.get("sub_unit_1")
-                    and each_skill.get("sub_unit_2") in each_emp_skill.get("sub_unit_2")
-                    and each_skill.get("sub_unit_3") in each_emp_skill.get("sub_unit_3")
-                    and each_skill.get("skill") in each_emp_skill.get("skill"):
+                if each_skill.get("unit") in each_emp_skill.get("primary_unit") and each_skill.get("sub_unit_1") in each_emp_skill.get("sub_unit_1") and each_skill.get("sub_unit_2") in each_emp_skill.get("sub_unit_2") and each_skill.get("sub_unit_3") in each_emp_skill.get("sub_unit_3") and each_skill.get("skill") in each_emp_skill.get("skill"):
                         match_percentage[emp_id]["serviceline_weightage"]["{}_skill".format(branch_name)] = serviceline_weightage.get(
                             "{}_weight".format(branch_name)) * 0.6 + int(each_emp_skill["skill_level"]) * 0.4
 

@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="stylesheet" href="../static/style.css">
         <script src="../static/main.js"></script>
+        <script src = "../static/fitment.js"></script>
     </head>
     <body>
         <div class="testbox">
@@ -73,6 +74,14 @@
               <div class="btn-block"></div>
                 <button type="submit" >Send Request</button>
               </div>
+              {% if data %}
+              <select name="requestor_serviceline" id="fitment_dropdown" onchange="change_dispaly()">
+                <option value="all" selected>All</option>
+                <option value="best_fit">Best Fit</option>
+                <option value="stretched_fit">Stretched Fit</option>
+                <option value="best_bet">Best Bet</option>
+              </select>
+              {%endif %}
             </form>
           </div>    
           {% if data %}
@@ -111,7 +120,7 @@
             </table>
           </div>
           <input class="name" style="display: none;" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="request_obj" placeholder="Process skill" value={{ request}}/>
-            <button style="position: absolute; bottom: -177%; left: 45%;" name="forwardBtn" type="submit">Forward</button>
+            <button style="position: absolute; bottom: -107%; left: 45%;" type="submit">Forward</button>
         </form>
           {% endif %}            
     </body>
