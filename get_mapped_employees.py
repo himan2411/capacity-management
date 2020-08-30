@@ -42,7 +42,7 @@ def get_skill_branches(job_title, technical_skill_kw, functional_skill_kw,proces
     returns the matched skill branch from the skill_tree by matching keywords.
     """
     # skill_tree = json.load(open("skill_tree.json", "r"))
-    skill_tree1 = json.load(open("/home/harsh/Desktop/capacity_management/flask_app/skill_tree1.json", "r"))
+    skill_tree1 = json.load(open("skill_tree1.json", "r"))
 
     matched_skills = {"technical":[],"functional":[],"process":[]}
     for skill in skill_tree1:
@@ -86,7 +86,7 @@ def match_demand_skills(emp_id, each_emp_skills, skill_branches, match_dict, ser
 
 def get_emp_wieghtage(demand):
     
-    supply = open("/home/harsh/Desktop/capacity_management/flask_app/supply.json", "r")
+    supply = open("supply.json", "r")
     supply_dict = json.load(supply)
 
     # service_line = demand.get("requestor_serviceline")

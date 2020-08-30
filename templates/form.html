@@ -76,7 +76,43 @@
             </form>
           </div>    
           {% if data %}
-            <img src="static/{{ license_back_name }}" style="max-width: 100%; max-height: 100%;" class="upload-icon" />
-          {% endif %}           
+          <form action="http://localhost:5555/forward" method = "POST" enctype = "multipart/form-data" style="padding:0px ;">
+            <div class="table-wrap" style="width: 80%; position: absolute; left: 10%;">
+                  <table name="employees" style="width: 100%;" class="emp_table">
+                    <tbody>
+                      <tr>
+                          <td style="width: 5%; height: 60px;">  </td>
+                          <td style="width: 15%;"  > Id </td> 
+                          <td style="width: 15%;" > Fitment </td>
+                          <td style="width: 15%;" > SMU </td>
+                          <td style="width: 15%;" > Skilll </td>
+                          <td style="width: 15%;" > Experience </td>
+                          <td style="width: 15%;" > Rank </td>
+                          <td style="width: 15%;" > Location </td>
+                          <td style="width: 15%;" > Bench Ageing </td>
+                      </tr>
+
+
+              {% for row in data %}
+
+                    <tr>
+                      <td class="table-cell"><input type="checkbox" id="vehicle1"  name={{row['e_id'] }} style="width: 20px;height: 20px;" ></td>
+                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['e_id']  }}</td> 
+                        <td class="table-cell" style="width: 15%;height: 15%; overflow-y: auto;" >{{row['fitment']  }}</td>
+                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['smu_info']  }}</td> 
+                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['skills']  }}</td>
+                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['experience']  }}</td> 
+                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['rank']  }}</td> 
+                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['location']  }}</td>
+                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['bench']  }}</td>
+                    </tr>
+                  </tbody>
+            {% endfor %}
+            </table>
+          </div>
+          <input class="name" style="display: none;" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="request_obj" placeholder="Process skill" value={{ request}}/>
+            <button style="position: absolute; bottom: -177%; left: 45%;" name="forwardBtn" type="submit">Forward</button>
+        </form>
+          {% endif %}            
     </body>
 </html>
