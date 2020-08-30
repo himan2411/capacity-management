@@ -222,35 +222,4 @@ def get_emp_wieghtage(demand):
         emp_tuple_list.append(emp_tuple)
 
     return emp_tuple_list
-
-    
-if __name__ == "__main__":
-    demand = {
-    "requestor_serviceline": "serviceline1",
-    "requestor_sub_serviceline": "subservicelin3",
-    "requestor_smu": "smu2",
-    "job_title": "financial risk analyst",
-    "rank": "rank_3",
-    "required_resources": 1,
-    "country": "india",
-    "location": "bangalore",
-    "alternate_location": "",
-    "technical_skill_1": "microsoft office",
-    "technical_skill_2": "sdlc",
-    "technical_skill_3": "",
-    "functional_skill_1": "risk analysis",
-    "functional_skill_2": "analytics",
-    "functional_skill_3": "accounting",
-    "process_skill_1": "effective communication",
-    "process_skill_2": "documentation",
-    "process_skill_3": "team skill",
-    "experience": 8,
-    'location_weight': 30,
-    'experience_weight': 10,
-    'bench_weight': 0,
-    'rank_weight': 10,
-    'technical_weight': 10,
-    'functional_weight': 30,
-    'process_weight': 10
-    }
-    mapping(demand)                                                                                                                     
+                                                                                                                 
