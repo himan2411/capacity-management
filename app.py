@@ -16,7 +16,7 @@ def supply():
     if request.method == 'POST':
         try:
             form = request.form.to_dict()
-            # print(form)
+            print(form)
             emp_list = mapping(form)
             fitment_score = {}
             #load supply chart
