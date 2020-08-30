@@ -717,6 +717,13 @@
     {
       "unit": "unit 7",
       "sub_unit_1": "process",
+      "sub_unit_2": "soft skills",
+      "sub_unit_3": "",
+      "skill": "documentation"
+    },
+    {
+      "unit": "unit 7",
+      "sub_unit_1": "process",
       "sub_unit_2": "cognitive skills",
       "sub_unit_3": "critical problem solving",
       "skill": ""
