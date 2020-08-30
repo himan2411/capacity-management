@@ -50,7 +50,10 @@ def get_skill_branches(
         functional_skill_kw(list): keywords present in functional skill in demand.
         process_skill_kw(list): keywords present in process skill in demand.
     """
-    skill_tree1 = json.load(open("capacity-management/skill_tree1.json", "r"))
+    skill_tree1 = json.load(
+        open(
+            "git repo/capacity-management/skill_tree1.json",
+            "r"))
 
     matched_skills = {"technical": [], "functional": [], "process": []}
     for skill in skill_tree1:
@@ -74,27 +77,32 @@ def match_demand_skills(
         skill_branches,
         match_dict,
         serviceline_weightage):
-        """
-        Assigns the match % by mapping skills from demand to each employee.
+    """
+    Assigns the match % by mapping skills from demand to each employee.
 
-        Args:
-            emp_id(string): Employee id
-            each_emp_skills(dict): dict object of skills for each employee.
-            skill_branches(dict): dict object of skill branches obtained from demand.
-            match_dict(dict): dict onject of the calculated fitment %.
-            serviceline_weightage(dict): dict object of the weightage obtained from demand.
-        """
+    Args:
+        emp_id(string): Employee id
+        each_emp_skills(dict): dict object of skills for each employee.
+        skill_branches(dict): dict object of skill branches obtained from demand.
+        match_dict(dict): dict onject of the calculated fitment %.
+        serviceline_weightage(dict): dict object of the weightage obtained from demand.
+    """
     match_percentage = match_dict
     for branch_name, each_branch in skill_branches.items():
         for each_skill in each_branch:
             for each_emp_skill in each_emp_skills:
-                if each_skill.get("unit") in each_emp_skill.get("primary_unit")
-                    and each_skill.get("sub_unit_1") in each_emp_skill.get("sub_unit_1")
-                    and each_skill.get("sub_unit_2") in each_emp_skill.get("sub_unit_2")
-                    and each_skill.get("sub_unit_3") in each_emp_skill.get("sub_unit_3")
-                    and each_skill.get("skill") in each_emp_skill.get("skill"):
-                        match_percentage[emp_id]["serviceline_weightage"]["{}_skill".format(branch_name)] = serviceline_weightage.get(
-                            "{}_weight".format(branch_name)) * 0.6 + int(each_emp_skill["skill_level"]) * 0.4
+                if each_skill.get("unit") in each_emp_skill.get(
+                        "primary_unit"):
+                    if each_skill.get(
+                            "sub_unit_1") in each_emp_skill.get("sub_unit_1"):
+                        if each_skill.get(
+                                "sub_unit_2") in each_emp_skill.get("sub_unit_2"):
+                            if each_skill.get(
+                                    "sub_unit_3") in each_emp_skill.get("sub_unit_3"):
+                                if each_skill.get(
+                                        "skill") in each_emp_skill.get("skill"):
+                                    match_percentage[emp_id]["serviceline_weightage"]["{}_skill".format(branch_name)] = serviceline_weightage.get("{}_weight".format(
+                                        branch_name)) * 0.6 + ((int(each_emp_skill["skill_level"]) - 1) / 4) * serviceline_weightage.get("{}_weight".format(branch_name)) * 0.4
 
     return match_percentage
 
@@ -102,15 +110,12 @@ def match_demand_skills(
 def get_emp_wieghtage(demand):
     """
     Calculates fitment % for each param present in serviceline weightage.
-
     Args:
         demand(dict): Dictionary which contains demand info.
     """
-    rank_list, exp_list, bench_age_list = [], [], []
-    match_percentage = {}
-    supply = open("capacity-management/supply.json", "r")
-    supply_dict = json.load(supply)
 
+    supply = open("git repo/capacity-management/supply.json", "r")
+    supply_dict = json.load(supply)
     serviceline_weightage = {
         "location_weight": int(demand.get("location_weight")),
         "experience_weight": int(demand.get("experience_weight")),
@@ -120,8 +125,9 @@ def get_emp_wieghtage(demand):
         "functional_weight": int(demand.get("functional_weight")),
         "process_weight": int(demand.get("process_weight"))
     }
+    rank_list, exp_list, bench_age_list = [], [], []
+    match_percentage = {}
 
-    # Generating list for Min-Max Normalisation of data.
     bench_age_list = [each.get("bench_ageing", 0)
                       for each in supply_dict.values()]
     rank_list = [int(each.get("rank", 0).lower().replace("rank_", ""))
@@ -150,29 +156,31 @@ def get_emp_wieghtage(demand):
             },
             "fitment_percentage": 0
         }
-
         # Calculating % for experience
-        match_percentage[emp_id]["additional_credits"]["experience"] = (
+        match_percentage[emp_id]["serviceline_weightage"]["experience"] = (
             (each_emp.get("years_of_experience") - min(exp_list)) / (
                 max(exp_list) - min(exp_list))) * serviceline_weightage.get(
             "experience_weight", 0)
 
-        # Calculating % for location
         if each_emp.get("city").lower() in demand.get("location") or each_emp.get(
                 "city").lower() in demand.get("alternate_location"):
             match_percentage[emp_id]["serviceline_weightage"]["location"] = serviceline_weightage.get(
                 "location_weight", 0)
 
         # Calculating % for rank
-        match_percentage[emp_id]["serviceline_weightage"]["rank"] = ((int(each_emp.get("rank").lower().replace(
-            "rank_", "")) - min(rank_list)) / (max(rank_list) - min(rank_list))) * serviceline_weightage.get("rank_weight", 0)
+        a = max(rank_list) - \
+            int(each_emp.get("rank").lower().replace("rank_", ""))
+        b = max(rank_list) - min(rank_list)
+        match_percentage[emp_id]["serviceline_weightage"]["rank"] = (
+            a / b) * serviceline_weightage.get("rank_weight", 0)
 
         # Calculating % for bench ageing
         match_percentage[emp_id]["serviceline_weightage"]["bench_ageing"] = (
-            (each_emp.get("years_of_experience") - min(bench_age_list)) / (
+            (each_emp.get("bench_ageing") - min(bench_age_list)) / (
                 max(bench_age_list) - min(bench_age_list))) * serviceline_weightage.get(
             "bench_weight", 0)
 
+        # Calculating % for technical skills
         technical_skill_kw, functional_skill_kw, process_skill_kw = get_skill_kws(
             demand)
 
@@ -190,6 +198,8 @@ def get_emp_wieghtage(demand):
             skill_branches,
             match_percentage,
             serviceline_weightage)
+        with open("emp_fitment_percentage.json", "w") as f:
+            f.write(json.dumps(match_percentage, indent="\t"))
         match_percentage[emp_id]["fitment_percentage"] = sum(
             match_percentage[emp_id]["serviceline_weightage"].values())
 

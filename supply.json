@@ -1,12 +1,12 @@
 {
 	"employee_1": {
 		"rank": "rank_1",
-		"years_of_experience": 20,
+		"years_of_experience": 5,
 		"service_line": "serviceline1",
 		"sub_service_line": "subserviceline1",
 		"smu": "smu1",
 		"country": "india",
-		"city": "gurgaon",
+		"city": "bangalore",
 		"bench_ageing": 4,
 		"skills": [
 			{
@@ -338,11 +338,11 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 2",
+				"primary_unit": "unit 3",
 				"sub_unit_1": "technology",
-				"sub_unit_2": "design",
-				"sub_unit_3": "",
-				"skill": "solution design",
+				"sub_unit_2": "managemnt",
+				"sub_unit_3": "methodologies",
+				"skill": "sdlc",
 				"skill_level": 3
 			},
 			{
@@ -666,6 +666,14 @@
 				"skill_level": 2
 			},
 			{
+				"primary_unit": "unit 3",
+				"sub_unit_1": "technology",
+				"sub_unit_2": "managemnt",
+				"sub_unit_3": "methodologies",
+				"skill": "sdlc",
+				"skill_level": 3
+			},
+			{
 				"primary_unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "process",
@@ -770,38 +778,6 @@
 		"bench_ageing": 5,
 		"skills": [
 			{
-				"primary_unit": "unit 5",
-				"sub_unit_1": "finance",
-				"sub_unit_2": "process",
-				"sub_unit_3": "reporting",
-				"skill": "enterprise risk analysis",
-				"skill_level": 3
-			}
-			{
-				"primary_unit": "unit 4",
-				"sub_unit_1": "management",
-				"sub_unit_2": "business development",
-				"sub_unit_3": "",
-				"skill": "stake holder management",
-				"skill_level": 2
-			},
-			{
-				"primary_unit": "unit 3",
-				"sub_unit_1": "technology",
-				"sub_unit_2": "management",
-				"sub_unit_3": "execution",
-				"skill": "agile",
-				"skill_level": 2
-			},
-			{
-				"primary_unit": "unit 3",
-				"sub_unit_1": "technology",
-				"sub_unit_2": "management",
-				"sub_unit_3": "methodologies",
-				"skill": "iterative",
-				"skill_level": 3
-			},
-			{
 				"primary_unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "managemnt",
@@ -810,60 +786,28 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 6",
-				"sub_unit_1": "business analysis",
-				"sub_unit_2": "critical analysis",
-				"sub_unit_3": "",
-				"skill": "problem solving",
-				"skill_level": 3
-			},
-			{
-				"primary_unit": "unit 4",
-				"sub_unit_1": "management",
-				"sub_unit_2": "budget management",
-				"sub_unit_3": "budget analysis",
-				"skill": "estimating",
-				"skill_level": 2
-			},
-			{
-				"primary_unit": "unit 4",
-				"sub_unit_1": "management",
-				"sub_unit_2": "business transformation",
-				"sub_unit_3": "",
-				"skill": "programme leadership",
-				"skill_level": 3
-			},
-			{
-				"primary_unit": "unit 4",
-				"sub_unit_1": "management",
-				"sub_unit_2": "business transformation",
-				"sub_unit_3": "",
-				"skill": "programme delivery",
-				"skill_level": 3
-			},
-			{
-				"primary_unit": "unit 4",
-				"sub_unit_1": "management",
-				"sub_unit_2": "business transformation",
-				"sub_unit_3": "change management",
-				"skill": "change strategy",
-				"skill_level": 3
-			},
-			{
 				"primary_unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
 				"skill": "team skills",
-				"skill_level": 3
+				"skill_level": 5
 			},
 			{
 				"primary_unit": "unit 7",
-				"sub_unit_1": "basic",
+				"sub_unit_1": "process",
+				"sub_unit_2": "soft skills",
+				"sub_unit_3": "effective communication",
+				"skill": "",
+				"skill_level": 5
+			},
+			{
+				"primary_unit": "unit 7",
+				"sub_unit_1": "process",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
-				"skill": "effective communication",
-				"skill_level": 3
+				"skill": "documentation",
+				"skill_level": 5
 			},
 			{
 				"primary_unit": "unit 1",
