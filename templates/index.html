@@ -2,53 +2,16 @@
 <html>
     <head>
         <title>Home page</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="stylesheet" href="../static/style.css">
     </head>
     <body>
-        <h1>Home Page!</h1>
-        <form action = "localhost:5555/comparison-result" method = "POST" enctype = "multipart/form-data">
-            <p> Service Line</p>
-            <select name="serviceLine" id="serviceLine">
-                <option value="ServiceLine1">ServiceLine1</option>
-                <option value="ServiceLine2">ServiceLine2</option>
-                <option value="ServiceLine3">ServiceLine3</option>
-            </select>
-            <div class="slidecontainer">
-                <p>Custom range slider:</p>
-                <input type="range" min="1" max="100" value="50" class="slider_orig" id="myRange">
-            </div>
-            <p>Job Title</p>
-            <input type="text" class="job_title" name="job_title" id="myRange">
-            <p>Rank</p>
-            <input type="text" class="rank" name="rank" id="myRange">
-            <p>Vacancies</p>
-            <input type="text" class="required_resources" name="required_resources" id="myRange">
-            <p>Country</p>
-            <input type="text" class="country" name="country" id="myRange">
-            <p>Location</p>
-            <input type="text" class="location" name="location" id="myRange">
-            <p>Alternate Location</p>
-            <input type="text" class="required_resources" name="required_resources" id="myRange">
-            <p>Technical Skill</p>
-            <input type="text" class="technical_skill_1" name="technical_skill_1" id="myRange">
-            <p>Technical Skill</p>
-            <input type="text" class="technical_skill_2" name="technical_skill_2" id="myRange">
-            <p>Technical Skill</p>
-            <input type="text" class="technical_skill_3" name="technical_skill_3" id="myRange">
-            <p>Functional Skill</p>
-            <input type="text" class="functional_skill_1" name="functional_skill_1" id="myRange">
-            <p>Functional Skill</p>
-            <input type="text" class="functional_skill_2" name="functional_skill_2" id="myRange">
-            <p>Functional Skill</p>
-            <input type="text" class="functional_skill_3" name="functional_skill_3" id="myRange">
-            <p>Process Skill</p>
-            <input type="text" class="process_skill_1" name="process_skill_1" id="myRange">
-            <p>Process Skill</p>
-            <input type="text" class="process_skill_2" name="process_skill_2" id="myRange">
-            <p>Process Skill</p>
-            <input type="text" class="process_skill_3" name="process_skill_3" id="myRange">
-            <p>Min Experience</p>
-            <input type="text" class="experience" name="experience" id="myRange">
-        </form>
+        Thank you
+        <br>
+        Selected Employees are<br>
+        {% if data %}
+        {{ data }}
+        {% endif  %}
     </body>
 </html>

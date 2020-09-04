@@ -80,8 +80,7 @@ select {
 	background: transparent;
 }
 
-select,
-table {
+select {
 	width: 31%;
 }
 
@@ -135,15 +134,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 th,
 td {
-	width: 18%;
-	padding: 15px 0;
 	border-bottom: 1px solid #ccc;
 	text-align: center;
 	vertical-align: unset;
 	line-height: 18px;
 	font-weight: 400;
 	word-break: break-all;
+	overflow: auto;
 }
+
+.table-wrap {
+  height: 100%;
+}
+
+tr {
+    display:block;
+} 
+.table-cell td {
+	height:50px;
+	overflow-x:scroll;
+}
+
 
 .first-col {
 	width: 25%;

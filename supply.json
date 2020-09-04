@@ -1,7 +1,7 @@
 {
 	"employee_1": {
 		"rank": "rank_1",
-		"years_of_experience": 5,
+		"experience": 5,
 		"service_line": "serviceline1",
 		"sub_service_line": "subserviceline1",
 		"smu": "smu1",
@@ -149,7 +149,7 @@
 	},
 	"employee_2": {
 		"rank": "rank_4",
-		"years_of_experience": 8,
+		"experience": 8,
 		"service_line": "serviceline2",
 		"sub_service_line": "subserviceline2",
 		"smu": "smu1",
@@ -201,7 +201,7 @@
 	},
 	"employee_3": {
 		"rank": "rank_4",
-		"years_of_experience": 9,
+		"experience": 9,
 		"service_line": "serviceline3",
 		"sub_service_line": "subserviceline4",
 		"smu": "smu1",
@@ -261,7 +261,7 @@
 	},
 	"employee_4": {
 		"rank": "rank_4",
-		"years_of_experience": 9,
+		"experience": 9,
 		"service_line": "serviceline1",
 		"sub_service_line": "subserviceline2",
 		"smu": "smu1",
@@ -313,7 +313,7 @@
 	},
 	"employee_5": {
 		"rank": "rank_2",
-		"years_of_experience": 15,
+		"experience": 15,
 		"service_line": "serviceline1",
 		"sub_service_line": "subserviceline3",
 		"smu": "smu1",
@@ -421,7 +421,7 @@
 	},
 	"employee_7": {
 		"rank": "rank_3",
-		"years_of_experience": 13,
+		"experience": 13,
 		"service_line": "serviceline3",
 		"sub_service_line": "subserviceline2",
 		"smu": "smu3",
@@ -457,7 +457,7 @@
 	},
 	"employee_8": {
 		"rank": "rank_2",
-		"years_of_experience": 16,
+		"experience": 16,
 		"service_line": "serviceline1",
 		"sub_service_line": "subserviceline1",
 		"smu": "smu3",
@@ -493,7 +493,7 @@
 	},
 	"employee_9": {
 		"rank": "rank_4",
-		"years_of_experience": 7,
+		"experience": 7,
 		"service_line": "serviceline1",
 		"sub_service_line": "subserviceline1",
 		"smu": "smu1",
@@ -537,7 +537,7 @@
 	},
 	"employee_10": {
 		"rank": "rank_5",
-		"years_of_experience": 5,
+		"experience": 5,
 		"service_line": "serviceline1",
 		"sub_service_line": "subserviceline4",
 		"smu": "smu1",
@@ -581,7 +581,7 @@
 	},
 	"employee_11": {
 		"rank": "rank_5",
-		"years_of_experience": 2,
+		"experience": 2,
 		"service_line": "serviceline1",
 		"sub_service_line": "subserviceline1",
 		"smu": "smu2",
@@ -649,7 +649,7 @@
 	},
 	"employee_12": {
 		"rank": "rank_4",
-		"years_of_experience": 8,
+		"experience": 8,
 		"service_line": "serviceline3",
 		"sub_service_line": "subserviceline2",
 		"smu": "smu2",
@@ -725,7 +725,7 @@
 	},
 	"employee_13": {
 		"rank": "rank_5",
-		"years_of_experience": 3,
+		"experience": 3,
 		"service_line": "serviceline1",
 		"sub_service_line": "subserviceline1",
 		"smu": "smu1",
@@ -769,10 +769,10 @@
 	},
 	"employee_14": {
 		"rank": "rank_1",
-		"years_of_experience": 20,
+		"experience": 20,
 		"service_line": "serviceline1",
 		"sub_service_line": "subserviceline3",
-		"smu": "smu1",
+		"smu": "smu2",
 		"country": "india",
 		"city": "bangalore",
 		"bench_ageing": 5,

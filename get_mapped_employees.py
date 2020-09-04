@@ -11,7 +11,16 @@ def mapping(demand):
     Args:
         demand(dict): Dictionary which contains demand info.
     """
-    emp_tuple_list = get_emp_wieghtage(demand)
+    serviceline_weightage = {
+        "location_weight": int(demand.get("location_weight")),
+        "experience_weight": int(demand.get("experience_weight")),
+        "bench_weight": int(demand.get("bench_weight")),
+        "rank_weight": int(demand.get("rank_weight")),
+        "technical_weight": int(demand.get("technical_weight")),
+        "functional_weight": int(demand.get("functional_weight")),
+        "process_weight": int(demand.get("process_weight"))
+    }
+    emp_tuple_list = get_emp_wieghtage(demand, serviceline_weightage)
 
     items = sorted(emp_tuple_list, key=itemgetter(3, 2), reverse=True)
     return items
@@ -51,8 +60,7 @@ def get_skill_branches(
         process_skill_kw(list): keywords present in process skill in demand.
     """
     skill_tree1 = json.load(
-        open(
-            "git repo/capacity-management/skill_tree1.json",
+        open("skill_tree1.json",
             "r"))
 
     matched_skills = {"technical": [], "functional": [], "process": []}
@@ -70,6 +78,31 @@ def get_skill_branches(
     return matched_skills.get("technical"), matched_skills.get(
         "functional"), matched_skills.get("process")
 
+def calculate_serviceline_score(match_percentage):
+    """
+    """
+    
+    for emp_id, each_item in match_percentage.items():
+        each_item["serviceline_match"] = 0
+        if each_item["serviceline_info"]["service_line"] == demand["requestor_serviceline"].lower():
+            each_item["serviceline_match"] += 1
+            if each_item["serviceline_info"]["sub_service_line"] == demand["requestor_sub_serviceline"].lower():
+                each_item["serviceline_match"] += 1
+                if each_item["serviceline_info"]["smu"] == demand["requestor_smu"].lower(
+                ):
+                    each_item["serviceline_match"] += 1
+
+    emp_tuple_list = []
+    for emp_id, each_item in match_percentage.items():
+        emp_tuple = (
+            emp_id,
+            each_item,
+            match_percentage[emp_id]["fitment_percentage"],
+            match_percentage[emp_id]["serviceline_match"])
+        emp_tuple_list.append(emp_tuple)
+
+    return emp_tuple_list
+                                                                                                                 
 
 def match_demand_skills(
         emp_id,
@@ -107,39 +140,23 @@ def match_demand_skills(
     return match_percentage
 
 
-def get_emp_wieghtage(demand):
+def get_emp_wieghtage(demand, serviceline_weightage):
     """
     Calculates fitment % for each param present in serviceline weightage.
     Args:
         demand(dict): Dictionary which contains demand info.
     """
-
-    supply = open("git repo/capacity-management/supply.json", "r")
-    supply_dict = json.load(supply)
-    serviceline_weightage = {
-        "location_weight": int(demand.get("location_weight")),
-        "experience_weight": int(demand.get("experience_weight")),
-        "bench_weight": int(demand.get("bench_weight")),
-        "rank_weight": int(demand.get("rank_weight")),
-        "technical_weight": int(demand.get("technical_weight")),
-        "functional_weight": int(demand.get("functional_weight")),
-        "process_weight": int(demand.get("process_weight"))
-    }
-    rank_list, exp_list, bench_age_list = [], [], []
+    supply_dict = json.load(open("supply.json", "r"))
     match_percentage = {}
 
     bench_age_list = [each.get("bench_ageing", 0)
                       for each in supply_dict.values()]
     rank_list = [int(each.get("rank", 0).lower().replace("rank_", ""))
                  for each in supply_dict.values()]
-    exp_list = [each.get("years_of_experience", 0)
+    exp_list = [each.get("experience", 0)
                 for each in supply_dict.values()]
-
-    for emp_id, each_emp in supply_dict.items():
-        each_emp["id"] = emp_id.lower().replace(" ", "_")
-
+    for emp_id,each_emp in supply_dict.items():    
         match_percentage[emp_id] = {
-            "additional_credits": {},
             "serviceline_info": {
                 "service_line": each_emp.get("service_line"),
                 "sub_service_line": each_emp.get("sub_service_line"),
@@ -155,10 +172,10 @@ def get_emp_wieghtage(demand):
                 "process_skill": 0
             },
             "fitment_percentage": 0
-        }
+        }  
         # Calculating % for experience
         match_percentage[emp_id]["serviceline_weightage"]["experience"] = (
-            (each_emp.get("years_of_experience") - min(exp_list)) / (
+            (each_emp.get("experience") - min(exp_list)) / (
                 max(exp_list) - min(exp_list))) * serviceline_weightage.get(
             "experience_weight", 0)
 
@@ -168,11 +185,11 @@ def get_emp_wieghtage(demand):
                 "location_weight", 0)
 
         # Calculating % for rank
-        a = max(rank_list) - \
+        num = max(rank_list) - \
             int(each_emp.get("rank").lower().replace("rank_", ""))
-        b = max(rank_list) - min(rank_list)
+        den = max(rank_list) - min(rank_list)
         match_percentage[emp_id]["serviceline_weightage"]["rank"] = (
-            a / b) * serviceline_weightage.get("rank_weight", 0)
+            num / den) * serviceline_weightage.get("rank_weight", 0)
 
         # Calculating % for bench ageing
         match_percentage[emp_id]["serviceline_weightage"]["bench_ageing"] = (
@@ -198,28 +215,37 @@ def get_emp_wieghtage(demand):
             skill_branches,
             match_percentage,
             serviceline_weightage)
-        with open("emp_fitment_percentage.json", "w") as f:
-            f.write(json.dumps(match_percentage, indent="\t"))
         match_percentage[emp_id]["fitment_percentage"] = sum(
-            match_percentage[emp_id]["serviceline_weightage"].values())
+        match_percentage[emp_id]["serviceline_weightage"].values())
+    return calculate_serviceline_score(match_percentage)
 
-    for emp_id, each_item in match_percentage.items():
-        each_item["serviceline_match"] = 0
-        if each_item["serviceline_info"]["service_line"] == demand["requestor_serviceline"].lower():
-            each_item["serviceline_match"] += 1
-            if each_item["serviceline_info"]["sub_service_line"] == demand["requestor_sub_serviceline"].lower():
-                each_item["serviceline_match"] += 1
-                if each_item["serviceline_info"]["smu"] == demand["requestor_smu"].lower(
-                ):
-                    each_item["serviceline_match"] += 1
-
-    emp_tuple_list = []
-    for emp_id, each_item in match_percentage.items():
-        emp_tuple = (
-            emp_id,
-            each_item,
-            match_percentage[emp_id]["fitment_percentage"],
-            match_percentage[emp_id]["serviceline_match"])
-        emp_tuple_list.append(emp_tuple)
-
-    return emp_tuple_list
+if __name__ == "__main__":
+    demand = {
+    "requestor_serviceline": "serviceline1",
+    "requestor_sub_serviceline": "subservicelin3",
+    "requestor_smu": "smu2",
+    "job_title": "financial risk analyst",
+    "rank": "rank_3",
+    "required_resources": 1,
+    "country": "india",
+    "location": "bangalore",
+    "alternate_location": "",
+    "technical_skill_1": "microsoft office",
+    "technical_skill_2": "sdlc",
+    "technical_skill_3": "",
+    "functional_skill_1": "risk analysis",
+    "functional_skill_2": "analytics",
+    "functional_skill_3": "accounting",
+    "process_skill_1": "effective communication",
+    "process_skill_2": "documentation",
+    "process_skill_3": "team skill",
+    "experience": 8,
+    'location_weight': 30,
+    'experience_weight': 10,
+    'bench_weight': 0,
+    'rank_weight': 10,
+    'technical_weight': 10,
+    'functional_weight': 30,
+    'process_weight': 10
+    }
+    mapping(demand)  
