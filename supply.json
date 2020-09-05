@@ -10,12 +10,12 @@
 		"bench_ageing": 4,
 		"skills": [
 			{
-				"unit": "unit 1",
-				"sub_unit_1": "technology",
-				"sub_unit_2": "emerging trends",
+				"unit": "unit 5",
+				"sub_unit_1": "finance",
+				"sub_unit_2": "process",
 				"sub_unit_3": "",
-				"skill": "rpa",
-				"skill_level": 2
+				"skill": "accounting",
+				"skill_level": 5
 			},
 			{
 				"unit": "unit 3",
@@ -143,7 +143,7 @@
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "analytics",
 				"skill": "predictive analytics",
-				"skill_level": 1
+				"skill_level": 2
 			}
 		]
 	},
@@ -254,7 +254,7 @@
 				"sub_unit_1": "finance",
 				"sub_unit_2": "process",
 				"sub_unit_3": "reporting",
-				"skill": "enterprise risk analysis",
+				"skill": "risk analysis",
 				"skill_level": 3
 			}
 		]
@@ -444,14 +444,6 @@
 				"sub_unit_3": "",
 				"skill": "accounting",
 				"skill_level": 3
-			},
-			{
-				"unit": "unit 5",
-				"sub_unit_1": "finance",
-				"sub_unit_2": "process",
-				"sub_unit_3": "",
-				"skill": "reporting",
-				"skill_level": 2
 			}
 		]
 	},

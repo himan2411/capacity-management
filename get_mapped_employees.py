@@ -101,7 +101,6 @@ def calculate_serviceline_score(match_percentage):
         emp_tuple_list.append(emp_tuple)
 
     return emp_tuple_list
-                                                                                                                 
 
 def match_demand_skills(
         emp_id,
@@ -123,10 +122,17 @@ def match_demand_skills(
     for each_emp_skill in each_emp_skills:
         for branch_name, each_branch in skill_branches.items():
             for each_skill in each_branch:
-                if each_emp_skill.get("skill") in list(set(each_skill.values())& set(each_emp_skill.values())) and each_emp_skill.get("skill"):
-                    match_percentage[emp_id]["serviceline_weightage"]["{}_skill".format(branch_name)] = serviceline_weightage.get("{}_weight".format(
+                intersection_value = list(set(each_skill.values())& set(each_emp_skill.values()))
+                if (each_emp_skill.get("skill") in intersection_value and each_emp_skill.get("skill")) or (each_emp_skill.get("sub_unit_3") in intersection_value and each_emp_skill.get("sub_unit_3")):
+                    match_percentage[emp_id]["matched_skills"].append(each_emp_skill)
+                    # Max skill level is considered 5.
+                    weightage = serviceline_weightage.get("{}_weight".format(
                                             branch_name)) * 0.6 + ((int(each_emp_skill["skill_level"]) - 1) / 4) * serviceline_weightage.get("{}_weight".format(branch_name)) * 0.4
-
+                    if weightage > match_percentage[emp_id]["serviceline_weightage"]["{}_skill".format(branch_name)]:
+                        match_percentage[emp_id]["serviceline_weightage"]["{}_skill".format(branch_name)] = weightage
+    
+    # Removing duplicates from matched skills.
+    match_percentage[emp_id]["matched_skills"] = [dict(t) for t in {tuple(d.items()) for d in match_percentage[emp_id].get("matched_skills")}]
     return match_percentage
 
 
@@ -152,6 +158,7 @@ def get_emp_wieghtage(demand, serviceline_weightage):
                 "sub_service_line": each_emp.get("sub_service_line"),
                 "smu": each_emp.get("smu")
             },
+            "matched_skills":[],
             "serviceline_weightage": {
                 "experience": 0,
                 "location": 0,
@@ -238,4 +245,4 @@ if __name__ == "__main__":
     'functional_weight': 30,
     'process_weight': 10
     }
-    mapping(demand)  
+    mapping(demand)

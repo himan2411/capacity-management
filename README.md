@@ -68,6 +68,6 @@ Algo
 if multiple skills are matched then select the one with max %.
 Update the skill tree after the user selects the employees.
 Optimise match_demand_skills() and reduce complexity. use time.time() for performance
-
+Max skill level is assumed to 5
 
 
