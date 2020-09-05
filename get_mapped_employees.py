@@ -1,5 +1,5 @@
 # Main file to find the matching employees as per demand.
-
+# https://stackoverflow.com/questions/44458629/how-to-make-nested-for-loop-more-pythonic
 import json
 from operator import itemgetter, attrgetter
 
@@ -81,7 +81,6 @@ def get_skill_branches(
 def calculate_serviceline_score(match_percentage):
     """
     """
-    
     for emp_id, each_item in match_percentage.items():
         each_item["serviceline_match"] = 0
         if each_item["serviceline_info"]["service_line"] == demand["requestor_serviceline"].lower():
@@ -121,21 +120,12 @@ def match_demand_skills(
         serviceline_weightage(dict): dict object of the weightage obtained from demand.
     """
     match_percentage = match_dict
-    for branch_name, each_branch in skill_branches.items():
-        for each_skill in each_branch:
-            for each_emp_skill in each_emp_skills:
-                if each_skill.get("unit") in each_emp_skill.get(
-                        "primary_unit"):
-                    if each_skill.get(
-                            "sub_unit_1") in each_emp_skill.get("sub_unit_1"):
-                        if each_skill.get(
-                                "sub_unit_2") in each_emp_skill.get("sub_unit_2"):
-                            if each_skill.get(
-                                    "sub_unit_3") in each_emp_skill.get("sub_unit_3"):
-                                if each_skill.get(
-                                        "skill") in each_emp_skill.get("skill"):
-                                    match_percentage[emp_id]["serviceline_weightage"]["{}_skill".format(branch_name)] = serviceline_weightage.get("{}_weight".format(
-                                        branch_name)) * 0.6 + ((int(each_emp_skill["skill_level"]) - 1) / 4) * serviceline_weightage.get("{}_weight".format(branch_name)) * 0.4
+    for each_emp_skill in each_emp_skills:
+        for branch_name, each_branch in skill_branches.items():
+            for each_skill in each_branch:
+                if each_emp_skill.get("skill") in list(set(each_skill.values())& set(each_emp_skill.values())) and each_emp_skill.get("skill"):
+                    match_percentage[emp_id]["serviceline_weightage"]["{}_skill".format(branch_name)] = serviceline_weightage.get("{}_weight".format(
+                                            branch_name)) * 0.6 + ((int(each_emp_skill["skill_level"]) - 1) / 4) * serviceline_weightage.get("{}_weight".format(branch_name)) * 0.4
 
     return match_percentage
 
@@ -222,7 +212,7 @@ def get_emp_wieghtage(demand, serviceline_weightage):
 if __name__ == "__main__":
     demand = {
     "requestor_serviceline": "serviceline1",
-    "requestor_sub_serviceline": "subservicelin3",
+    "requestor_sub_serviceline": "subserviceline3",
     "requestor_smu": "smu2",
     "job_title": "financial risk analyst",
     "rank": "rank_3",

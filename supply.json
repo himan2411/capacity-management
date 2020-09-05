@@ -10,7 +10,7 @@
 		"bench_ageing": 4,
 		"skills": [
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "",
@@ -18,7 +18,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "service delivery",
 				"sub_unit_3": "methodologies",
@@ -26,7 +26,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 4",
+				"unit": "unit 4",
 				"sub_unit_1": "management",
 				"sub_unit_2": "budget management",
 				"sub_unit_3": "budget analysis",
@@ -34,7 +34,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 4",
+				"unit": "unit 4",
 				"sub_unit_1": "management",
 				"sub_unit_2": "business development",
 				"sub_unit_3": "",
@@ -42,7 +42,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "management",
 				"sub_unit_3": "execution",
@@ -50,7 +50,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "management",
 				"sub_unit_3": "methodologies",
@@ -58,7 +58,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "managemnt",
 				"sub_unit_3": "methodologies",
@@ -66,7 +66,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 6",
+				"unit": "unit 6",
 				"sub_unit_1": "business analysis",
 				"sub_unit_2": "critical analysis",
 				"sub_unit_3": "",
@@ -74,7 +74,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 4",
+				"unit": "unit 4",
 				"sub_unit_1": "management",
 				"sub_unit_2": "budget management",
 				"sub_unit_3": "budget analysis",
@@ -82,7 +82,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 4",
+				"unit": "unit 4",
 				"sub_unit_1": "management",
 				"sub_unit_2": "business transformation",
 				"sub_unit_3": "",
@@ -90,7 +90,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 4",
+				"unit": "unit 4",
 				"sub_unit_1": "management",
 				"sub_unit_2": "business transformation",
 				"sub_unit_3": "",
@@ -98,7 +98,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "management",
 				"sub_unit_3": "",
@@ -106,7 +106,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 4",
+				"unit": "unit 4",
 				"sub_unit_1": "management",
 				"sub_unit_2": "business transformation",
 				"sub_unit_3": "change management",
@@ -114,7 +114,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -122,7 +122,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -130,7 +130,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "analytics",
@@ -138,7 +138,7 @@
 				"skill_level": 1
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "analytics",
@@ -158,7 +158,7 @@
 		"bench_ageing": 2,
 		"skills": [
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "management",
 				"sub_unit_3": "methodologies",
@@ -166,7 +166,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 6",
+				"unit": "unit 6",
 				"sub_unit_1": "business analysis",
 				"sub_unit_2": "critical analysis",
 				"sub_unit_3": "",
@@ -174,7 +174,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 6",
+				"unit": "unit 6",
 				"sub_unit_1": "business analysis",
 				"sub_unit_2": "",
 				"sub_unit_3": "",
@@ -182,7 +182,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 4",
+				"unit": "unit 4",
 				"sub_unit_1": "management",
 				"sub_unit_2": "business development",
 				"sub_unit_3": "",
@@ -190,7 +190,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -210,7 +210,7 @@
 		"bench_ageing": 3,
 		"skills": [
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "operations",
 				"sub_unit_3": "analysis",
@@ -218,7 +218,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "operations",
 				"sub_unit_3": "analysis",
@@ -226,7 +226,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "tools",
 				"sub_unit_3": "",
@@ -234,7 +234,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "process",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -242,7 +242,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "process",
 				"sub_unit_3": "reporting",
@@ -250,7 +250,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "process",
 				"sub_unit_3": "reporting",
@@ -270,7 +270,7 @@
 		"bench_ageing": 6,
 		"skills": [
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -278,7 +278,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "platform",
 				"sub_unit_3": "cloud",
@@ -286,7 +286,7 @@
 				"skill_level": 4
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "programming",
 				"sub_unit_3": "scripting",
@@ -294,7 +294,7 @@
 				"skill_level": 4
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "web technologies",
 				"sub_unit_3": "web development",
@@ -302,7 +302,7 @@
 				"skill_level": 4
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "web technologies",
 				"sub_unit_3": "",
@@ -322,7 +322,7 @@
 		"bench_ageing": 5,
 		"skills": [
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "analytics",
@@ -330,7 +330,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "analytics",
@@ -338,7 +338,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "managemnt",
 				"sub_unit_3": "methodologies",
@@ -346,7 +346,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 2",
+				"unit": "unit 2",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "architecture",
 				"sub_unit_3": "",
@@ -354,7 +354,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 2",
+				"unit": "unit 2",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "architecture",
 				"sub_unit_3": "",
@@ -362,7 +362,7 @@
 				"skill_level": 4
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "artificial intelligence",
@@ -370,7 +370,7 @@
 				"skill_level": 4
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "artificial intelligence",
@@ -378,7 +378,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "programming",
 				"sub_unit_3": "scripting",
@@ -386,7 +386,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 6",
+				"unit": "unit 6",
 				"sub_unit_1": "business analysis",
 				"sub_unit_2": "critical analysis",
 				"sub_unit_3": "",
@@ -394,7 +394,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 6",
+				"unit": "unit 6",
 				"sub_unit_1": "business analysis",
 				"sub_unit_2": "",
 				"sub_unit_3": "",
@@ -402,7 +402,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -410,7 +410,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -430,7 +430,7 @@
 		"bench_ageing": 3,
 		"skills": [
 			{
-				"primary_unit": "unit 6",
+				"unit": "unit 6",
 				"sub_unit_1": "business analysis",
 				"sub_unit_2": "critical analysis",
 				"sub_unit_3": "",
@@ -438,7 +438,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "process",
 				"sub_unit_3": "",
@@ -446,7 +446,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "process",
 				"sub_unit_3": "",
@@ -466,7 +466,7 @@
 		"bench_ageing": 4,
 		"skills": [
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "service delivery",
 				"sub_unit_3": "",
@@ -474,7 +474,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "service delivery",
 				"sub_unit_3": "",
@@ -482,7 +482,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "service delivery",
 				"sub_unit_3": "",
@@ -502,7 +502,7 @@
 		"bench_ageing": 5,
 		"skills": [
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "data warehousing",
 				"sub_unit_3": "",
@@ -510,7 +510,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "data warehousing",
 				"sub_unit_3": "business intelligence",
@@ -518,7 +518,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "data warehousing",
 				"sub_unit_3": "business intelligence",
@@ -526,7 +526,7 @@
 				"skill_level": 4
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -546,7 +546,7 @@
 		"bench_ageing": 3,
 		"skills": [
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -554,7 +554,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "web technologies",
 				"sub_unit_3": "",
@@ -562,7 +562,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "platform",
 				"sub_unit_3": "cloud",
@@ -570,7 +570,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "web technologies",
 				"sub_unit_3": "web development",
@@ -590,7 +590,7 @@
 		"bench_ageing": 8,
 		"skills": [
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "artificial intelligence",
@@ -598,7 +598,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "artificial intelligence",
@@ -606,7 +606,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "analytics",
@@ -614,7 +614,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "analytics",
@@ -622,7 +622,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "programming",
 				"sub_unit_3": "sql",
@@ -630,7 +630,7 @@
 				"skill_level": 4
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "data warehousing",
 				"sub_unit_3": "business intelligence",
@@ -638,7 +638,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -658,7 +658,7 @@
 		"bench_ageing": 2,
 		"skills": [
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "process",
 				"sub_unit_3": "reporting",
@@ -666,7 +666,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "managemnt",
 				"sub_unit_3": "methodologies",
@@ -674,7 +674,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "process",
 				"sub_unit_3": "reporting",
@@ -682,7 +682,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "process",
 				"sub_unit_3": "reporting",
@@ -690,7 +690,7 @@
 				"skill_level": 2
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "tools",
 				"sub_unit_3": "",
@@ -698,7 +698,7 @@
 				"skill_level": 4
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "tools",
 				"sub_unit_3": "",
@@ -706,7 +706,7 @@
 				"skill_level": 4
 			},
 			{
-				"primary_unit": "unit 5",
+				"unit": "unit 5",
 				"sub_unit_1": "finance",
 				"sub_unit_2": "assessment",
 				"sub_unit_3": "",
@@ -714,7 +714,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "process",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -734,7 +734,7 @@
 		"bench_ageing": 3,
 		"skills": [
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "analytics",
@@ -742,7 +742,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "data warehousing",
 				"sub_unit_3": "business intelligence",
@@ -750,7 +750,7 @@
 				"skill_level": 4
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "programming",
 				"sub_unit_3": "sql",
@@ -758,7 +758,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "programming",
 				"sub_unit_3": "scripting",
@@ -778,7 +778,7 @@
 		"bench_ageing": 5,
 		"skills": [
 			{
-				"primary_unit": "unit 3",
+				"unit": "unit 3",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "managemnt",
 				"sub_unit_3": "methodologies",
@@ -786,7 +786,7 @@
 				"skill_level": 3
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "basic",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -794,7 +794,7 @@
 				"skill_level": 5
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "process",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "effective communication",
@@ -802,7 +802,7 @@
 				"skill_level": 5
 			},
 			{
-				"primary_unit": "unit 7",
+				"unit": "unit 7",
 				"sub_unit_1": "process",
 				"sub_unit_2": "soft skills",
 				"sub_unit_3": "",
@@ -810,7 +810,7 @@
 				"skill_level": 5
 			},
 			{
-				"primary_unit": "unit 1",
+				"unit": "unit 1",
 				"sub_unit_1": "technology",
 				"sub_unit_2": "emerging trends",
 				"sub_unit_3": "analytics",
