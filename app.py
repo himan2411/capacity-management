@@ -56,7 +56,7 @@ def supply():
                 resp.write(emp_list)
         except Exception as e:
             print(e)
-    return render_template("form.html", data=data , request=form, emp_list_by_percentage=emp_list_by_percentage)
+    return render_template("supply.html", data=data , request=form, emp_list_by_percentage=emp_list_by_percentage)
     
 @app.route('/forward', methods = ['POST'])
 def forward():
