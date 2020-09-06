@@ -1639,3 +1639,144 @@ employee_3 		 8.666666666666666 		 serviceline3 		 subserviceline4 	 smu1
 employee_2 		 8.5 		 serviceline2 		 subserviceline2 	 smu1
 employee_12 		 8.5 		 serviceline3 		 subserviceline2 	 smu2
 employee_7 		 6.833333333333333 		 serviceline3 		 subserviceline2 	 smu3
+# Demand
+{"requestor_serviceline": "serviceline2", "requestor_sub_serviceline": "subserviceline3", "requestor_smu": "SMU1", "job_title": "Digital Marketing Expert", "functional_skill_1": "advanced excel", "functional_skill_2": "", "functional_skill_3": "", "techincal_skill_1": "seo", "techincal_skill_2": "googleadsense", "techincal_skill_3": "", "process_skill_1": "communication", "process_skill_2": "presentation skills", "process_skill_3": "", "country": "india", "location": "mumbai", "alternate_location": "", "experience": "2", "rank": "3", "required_resources": "2", "location_weight": "30", "experience_weight": "10", "bench_weight": "0", "rank_weight": "10", "technical_weight": "30", "functional_weight": "10", "process_weight": "10"}
+
+Results
+-----------------------------------------------------------------------------------------------
+empid 		 fitment% 		 serviceline 		 sub_service_line 	 smu
+-----------------------------------------------------------------------------------------------
+employee_4 		 57.237 		 serviceline2 		 subserviceline3 	 smu1
+employee_5 		 51.658 		 serviceline2 		 subserviceline3 	 smu1
+employee_24 		 10.132 		 serviceline2 		 subserviceline3 	 smu1
+employee_23 		 45.105 		 serviceline2 		 subserviceline3 	 smu2
+employee_9 		 13.184 		 serviceline2 		 subserviceline2 	 smu1
+employee_29 		 1.053 		 serviceline2 		 subserviceline2 	 smu1
+employee_7 		 46.079 		 serviceline3 		 subserviceline3 	 smu3
+employee_25 		 40.658 		 serviceline1 		 subserviceline2 	 smu2
+employee_22 		 37.105 		 serviceline1 		 subserviceline1 	 smu1
+employee_6 		 33.553 		 serviceline3 		 subserviceline1 	 smu3
+employee_3 		 22.868 		 serviceline1 		 subserviceline3 	 smu1
+employee_12 		 22.868 		 serviceline1 		 subserviceline3 	 smu1
+employee_32 		 22.868 		 serviceline1 		 subserviceline3 	 smu1
+employee_2 		 20.105 		 serviceline1 		 subserviceline1 	 smu1
+employee_8 		 20.105 		 serviceline1 		 subserviceline1 	 smu1
+employee_1 		 20.0 		 serviceline1 		 subserviceline3 	 smu2
+employee_20 		 20.0 		 serviceline1 		 subserviceline3 	 smu2
+employee_40 		 20.0 		 serviceline1 		 subserviceline3 	 smu2
+employee_26 		 19.711 		 serviceline3 		 subserviceline1 	 smu1
+employee_14 		 15.395 		 serviceline1 		 subserviceline1 	 smu3
+employee_34 		 15.395 		 serviceline1 		 subserviceline1 	 smu3
+employee_10 		 13.711 		 serviceline3 		 subserviceline4 	 smu1
+employee_13 		 11.316 		 serviceline3 		 subserviceline2 	 smu3
+employee_33 		 11.316 		 serviceline3 		 subserviceline2 	 smu3
+employee_28 		 9.605 		 serviceline1 		 subserviceline1 	 smu1
+employee_27 		 9.079 		 serviceline3 		 subserviceline3 	 smu3
+employee_11 		 6.711 		 serviceline1 		 subserviceline2 	 smu1
+employee_31 		 6.711 		 serviceline1 		 subserviceline2 	 smu1
+employee_18 		 6.184 		 serviceline3 		 subserviceline2 	 smu2
+employee_38 		 6.184 		 serviceline3 		 subserviceline2 	 smu2
+employee_30 		 6.053 		 serviceline3 		 subserviceline4 	 smu1
+employee_15 		 5.658 		 serviceline1 		 subserviceline1 	 smu1
+employee_35 		 5.658 		 serviceline1 		 subserviceline1 	 smu1
+employee_21 		 2.5 		 serviceline3 		 subserviceline2 	 smu3
+employee_16 		 2.105 		 serviceline1 		 subserviceline4 	 smu1
+employee_36 		 2.105 		 serviceline1 		 subserviceline4 	 smu1
+employee_19 		 1.053 		 serviceline1 		 subserviceline1 	 smu1
+employee_39 		 1.053 		 serviceline1 		 subserviceline1 	 smu1
+employee_17 		 0.526 		 serviceline1 		 subserviceline1 	 smu2
+employee_37 		 0.526 		 serviceline1 		 subserviceline1 	 smu2
+# Demand
+{"requestor_serviceline": "serviceline2", "requestor_sub_serviceline": "subserviceline3", "requestor_smu": "SMU1", "job_title": "Digital Marketing Expert", "functional_skill_1": "advanced excel", "functional_skill_2": "", "functional_skill_3": "", "techincal_skill_1": "seo", "techincal_skill_2": "googleadsense", "techincal_skill_3": "", "process_skill_1": "communication", "process_skill_2": "presentation skills", "process_skill_3": "", "country": "india", "location": "mumbai", "alternate_location": "", "experience": "2", "rank": "3", "required_resources": "2", "location_weight": "30", "experience_weight": "10", "bench_weight": "0", "rank_weight": "10", "technical_weight": "30", "functional_weight": "10", "process_weight": "10"}
+
+Results
+-----------------------------------------------------------------------------------------------
+empid 		 fitment% 		 serviceline 		 sub_service_line 	 smu
+-----------------------------------------------------------------------------------------------
+employee_4 		 57.237 		 serviceline2 		 subserviceline3 	 smu1
+employee_5 		 51.658 		 serviceline2 		 subserviceline3 	 smu1
+employee_24 		 10.132 		 serviceline2 		 subserviceline3 	 smu1
+employee_23 		 45.105 		 serviceline2 		 subserviceline3 	 smu2
+employee_9 		 13.184 		 serviceline2 		 subserviceline2 	 smu1
+employee_29 		 1.053 		 serviceline2 		 subserviceline2 	 smu1
+employee_7 		 46.079 		 serviceline3 		 subserviceline3 	 smu3
+employee_25 		 40.658 		 serviceline1 		 subserviceline2 	 smu2
+employee_22 		 37.105 		 serviceline1 		 subserviceline1 	 smu1
+employee_6 		 33.553 		 serviceline3 		 subserviceline1 	 smu3
+employee_3 		 22.868 		 serviceline1 		 subserviceline3 	 smu1
+employee_12 		 22.868 		 serviceline1 		 subserviceline3 	 smu1
+employee_32 		 22.868 		 serviceline1 		 subserviceline3 	 smu1
+employee_2 		 20.105 		 serviceline1 		 subserviceline1 	 smu1
+employee_8 		 20.105 		 serviceline1 		 subserviceline1 	 smu1
+employee_1 		 20.0 		 serviceline1 		 subserviceline3 	 smu2
+employee_20 		 20.0 		 serviceline1 		 subserviceline3 	 smu2
+employee_40 		 20.0 		 serviceline1 		 subserviceline3 	 smu2
+employee_26 		 19.711 		 serviceline3 		 subserviceline1 	 smu1
+employee_14 		 15.395 		 serviceline1 		 subserviceline1 	 smu3
+employee_34 		 15.395 		 serviceline1 		 subserviceline1 	 smu3
+employee_10 		 13.711 		 serviceline3 		 subserviceline4 	 smu1
+employee_13 		 11.316 		 serviceline3 		 subserviceline2 	 smu3
+employee_33 		 11.316 		 serviceline3 		 subserviceline2 	 smu3
+employee_28 		 9.605 		 serviceline1 		 subserviceline1 	 smu1
+employee_27 		 9.079 		 serviceline3 		 subserviceline3 	 smu3
+employee_11 		 6.711 		 serviceline1 		 subserviceline2 	 smu1
+employee_31 		 6.711 		 serviceline1 		 subserviceline2 	 smu1
+employee_18 		 6.184 		 serviceline3 		 subserviceline2 	 smu2
+employee_38 		 6.184 		 serviceline3 		 subserviceline2 	 smu2
+employee_30 		 6.053 		 serviceline3 		 subserviceline4 	 smu1
+employee_15 		 5.658 		 serviceline1 		 subserviceline1 	 smu1
+employee_35 		 5.658 		 serviceline1 		 subserviceline1 	 smu1
+employee_21 		 2.5 		 serviceline3 		 subserviceline2 	 smu3
+employee_16 		 2.105 		 serviceline1 		 subserviceline4 	 smu1
+employee_36 		 2.105 		 serviceline1 		 subserviceline4 	 smu1
+employee_19 		 1.053 		 serviceline1 		 subserviceline1 	 smu1
+employee_39 		 1.053 		 serviceline1 		 subserviceline1 	 smu1
+employee_17 		 0.526 		 serviceline1 		 subserviceline1 	 smu2
+employee_37 		 0.526 		 serviceline1 		 subserviceline1 	 smu2
+# Demand
+{"requestor_serviceline": "serviceline2", "requestor_sub_serviceline": "subserviceline3", "requestor_smu": "SMU1", "job_title": "Digital Marketing Expert", "functional_skill_1": "advanced excel", "functional_skill_2": "", "functional_skill_3": "", "techincal_skill_1": "seo", "techincal_skill_2": "googleadsense", "techincal_skill_3": "", "process_skill_1": "communication", "process_skill_2": "presentation skills", "process_skill_3": "", "country": "india", "location": "mumbai", "alternate_location": "", "experience": "2", "rank": "3", "required_resources": "2", "location_weight": "30", "experience_weight": "10", "bench_weight": "0", "rank_weight": "10", "technical_weight": "30", "functional_weight": "10", "process_weight": "10"}
+
+Results
+-----------------------------------------------------------------------------------------------
+empid 		 fitment% 		 serviceline 		 sub_service_line 	 smu
+-----------------------------------------------------------------------------------------------
+employee_4 		 57.237 		 serviceline2 		 subserviceline3 	 smu1
+employee_5 		 51.658 		 serviceline2 		 subserviceline3 	 smu1
+employee_24 		 10.132 		 serviceline2 		 subserviceline3 	 smu1
+employee_23 		 45.105 		 serviceline2 		 subserviceline3 	 smu2
+employee_9 		 13.184 		 serviceline2 		 subserviceline2 	 smu1
+employee_29 		 1.053 		 serviceline2 		 subserviceline2 	 smu1
+employee_7 		 46.079 		 serviceline3 		 subserviceline3 	 smu3
+employee_25 		 40.658 		 serviceline1 		 subserviceline2 	 smu2
+employee_22 		 37.105 		 serviceline1 		 subserviceline1 	 smu1
+employee_6 		 33.553 		 serviceline3 		 subserviceline1 	 smu3
+employee_3 		 22.868 		 serviceline1 		 subserviceline3 	 smu1
+employee_12 		 22.868 		 serviceline1 		 subserviceline3 	 smu1
+employee_32 		 22.868 		 serviceline1 		 subserviceline3 	 smu1
+employee_2 		 20.105 		 serviceline1 		 subserviceline1 	 smu1
+employee_8 		 20.105 		 serviceline1 		 subserviceline1 	 smu1
+employee_1 		 20.0 		 serviceline1 		 subserviceline3 	 smu2
+employee_20 		 20.0 		 serviceline1 		 subserviceline3 	 smu2
+employee_40 		 20.0 		 serviceline1 		 subserviceline3 	 smu2
+employee_26 		 19.711 		 serviceline3 		 subserviceline1 	 smu1
+employee_14 		 15.395 		 serviceline1 		 subserviceline1 	 smu3
+employee_34 		 15.395 		 serviceline1 		 subserviceline1 	 smu3
+employee_10 		 13.711 		 serviceline3 		 subserviceline4 	 smu1
+employee_13 		 11.316 		 serviceline3 		 subserviceline2 	 smu3
+employee_33 		 11.316 		 serviceline3 		 subserviceline2 	 smu3
+employee_28 		 9.605 		 serviceline1 		 subserviceline1 	 smu1
+employee_27 		 9.079 		 serviceline3 		 subserviceline3 	 smu3
+employee_11 		 6.711 		 serviceline1 		 subserviceline2 	 smu1
+employee_31 		 6.711 		 serviceline1 		 subserviceline2 	 smu1
+employee_18 		 6.184 		 serviceline3 		 subserviceline2 	 smu2
+employee_38 		 6.184 		 serviceline3 		 subserviceline2 	 smu2
+employee_30 		 6.053 		 serviceline3 		 subserviceline4 	 smu1
+employee_15 		 5.658 		 serviceline1 		 subserviceline1 	 smu1
+employee_35 		 5.658 		 serviceline1 		 subserviceline1 	 smu1
+employee_21 		 2.5 		 serviceline3 		 subserviceline2 	 smu3
+employee_16 		 2.105 		 serviceline1 		 subserviceline4 	 smu1
+employee_36 		 2.105 		 serviceline1 		 subserviceline4 	 smu1
+employee_19 		 1.053 		 serviceline1 		 subserviceline1 	 smu1
+employee_39 		 1.053 		 serviceline1 		 subserviceline1 	 smu1
+employee_17 		 0.526 		 serviceline1 		 subserviceline1 	 smu2
+employee_37 		 0.526 		 serviceline1 		 subserviceline1 	 smu2

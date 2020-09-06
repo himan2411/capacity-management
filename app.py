@@ -17,10 +17,10 @@ def supply():
         try:
             form = request.form.to_dict()
             print(form)
-            emp_list = mapping(form)
+            emp_list, emp_list_by_percentage = mapping(form)
             fitment_score = {}
             #load supply chart
-            supply = open("supply.json", "r")
+            supply = open("new_supply.json", "r")
             supply_dict = json.load(supply)
             #create dictionary with id and fitment score
             for item in emp_list:
@@ -53,7 +53,7 @@ def supply():
         except Exception as e:
             emp_list = mapping(form)
             print(e)
-    return render_template("form.html", data=data , request=form, form=form)
+    return render_template("form.html", data=data , request=form)
     
 @app.route('/forward', methods = ['POST'])
 def forward():

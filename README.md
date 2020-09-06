@@ -37,16 +37,16 @@ as we can see in the formula also mentioned above.
 - Sure.
  
  5. We observed fitment score going beyond 100, this needs to be corrected.
-- Will be fixed.
+- Fixed.
 
  6. The i/p and o/p cannot be related once you submit, the i/p fields getting wiped off, better to have a reset button
-- Will be Fixed.
+- Fixed.
 
  7. Sorting the search results will give us a better view
-- Lack of communication.
+- Fixed.
 
  8. Sample data was provided for the purpose of understanding. Please mock up data as required.
-- Will be fixed.
+- Sure
 
 
 To Do :
@@ -55,19 +55,20 @@ To Do :
 
 UI:
 ---
-Proper serviceline weightage for the 1st time usage
-update sliders to textbox and Add validation for sum = 100 (submit buttonshould be disabled).
+[done]Proper serviceline weightage for the 1st time usage
+[done]update sliders to textbox and Add validation for sum = 100 (submit buttonshould be disabled).
+Update texts for textboxes
 add a reset button
 show results in the same page.
-Update the text for sort  All -> Sorted by Serviceline then %
-Add a method to sort by just fitment %
+[done]Update the text for sort  All -> Sorted by Serviceline then %
+[done]Add a method to sort by just fitment %
 [low]validation for Experience & Vacancies
 
 Algo
 ----
-if multiple skills are matched then select the one with max %.
+[done]if multiple skills are matched then select the one with max %.
+[done]Optimise match_demand_skills() and reduce complexity. use time.time() for performance
 Update the skill tree after the user selects the employees.
-Optimise match_demand_skills() and reduce complexity. use time.time() for performance
 Max skill level is assumed to 5
 
 

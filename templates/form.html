@@ -14,15 +14,15 @@
             <h1>Resource Requirements</h1>  
             <div style="padding-top: 3px;">
               <select name="requestor_serviceline" onchange="myFunction()">
-                <option value="ServiceLine1"  selected>ServiceLine1</option>
-                <option value="ServiceLine2">ServiceLine2</option>
-                <option value="ServiceLine3">ServiceLine3</option>
+                <option value="serviceline1" selected>serviceline1</option>
+                <option value="serviceline2">serviceline2</option>
+                <option value="serviceline3">serviceline3</option>
               </select>
               <select name="requestor_sub_serviceline">
-                <option value="SubServiceLine1" selected>SubServiceLine1</option>
-                <option value="SubServiceLine2">SubServiceLine2</option>
-                <option value="SubServiceLine3">SubServiceLine3</option>
-                <option value="SubServiceLine4">SubServiceLine4</option>
+                <option value="subserviceline1" selected>subserviceline1</option>
+                <option value="subserviceline2">subserviceline2</option>
+                <option value="subserviceline3">subserviceline3</option>
+                <option value="subserviceline4">subserviceline4</option>
               </select>
               <select name="requestor_smu">
                 <option value="SMU1" selected>SMU1</option>
@@ -76,7 +76,7 @@
               </div>
               {% if data %}
               <select name="requestor_serviceline" id="fitment_dropdown" onchange="change_dispaly()">
-                <option value="all" selected>All</option>
+                <option value="all" selected>Sorted by ServiceLine then by %</option>
                 <option value="best_fit">Best Fit</option>
                 <option value="stretched_fit">Stretched Fit</option>
                 <option value="best_bet">Best Bet</option>
