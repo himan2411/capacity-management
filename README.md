@@ -57,7 +57,6 @@ UI:
 ---
 [done]Proper serviceline weightage for the 1st time usage
 [done]update sliders to textbox and Add validation for sum = 100 (submit buttonshould be disabled).
-Update texts for textboxes
 add a reset button
 show results in the same page.
 [done]Update the text for sort  All -> Sorted by Serviceline then %
@@ -68,7 +67,8 @@ Algo
 ----
 [done]if multiple skills are matched then select the one with max %.
 [done]Optimise match_demand_skills() and reduce complexity. use time.time() for performance
+[FYI]Max skill level is assumed to 5
+[done]2. Table view from js issue
+[done]Skill tree me unit 1-3 are techincal skills, 4-6 are functional, 7 is process
 Update the skill tree after the user selects the employees.
-Max skill level is assumed to 5
-
 

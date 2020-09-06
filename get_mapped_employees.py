@@ -1,13 +1,12 @@
 # Main file to find the matching employees as per demand.
 # https://stackoverflow.com/questions/44458629/how-to-make-nested-for-loop-more-pythonic
-import json
-import skill_score 
+import json 
 from operator import itemgetter, attrgetter
 import numpy as np
 from gensim.models import KeyedVectors
 
 
-word_vectors = KeyedVectors.load("/home/himanshu/Downloads/capacity-management/model.kv", mmap='r')
+related_skill_vectors = KeyedVectors.load("skillmodel.kv", mmap='r')
 
 
 def mapping(demand):
@@ -43,56 +42,22 @@ def get_skill_kws(demand):
     Args:
         demand(dict): Dictionary which contains demand info.
     """
+    # try:
     technical_skill_kw, functional_skill_kw, process_skill_kw = [], [], []
 
     for i in range(1, 4):
-        technical_skill_kw.append(demand.get("technical_skill_{}".format(i)))
+        if demand.get("technical_skill_{}".format(i)):
+            technical_skill_kw.append(''.join(demand.get("technical_skill_{}".format(i)).split(" ")))
     for i in range(1, 4):
-        functional_skill_kw.append(demand.get("functional_skill_{}".format(i)))
+        if demand.get("functional_skill_{}".format(i)):
+            functional_skill_kw.append(''.join(demand.get("functional_skill_{}".format(i)).split(" ")))
     for i in range(1, 4):
-        process_skill_kw.append(demand.get("process_skill_{}".format(i)))
+        if demand.get("process_skill_{}".format(i)):
+            process_skill_kw.append(''.join(demand.get("process_skill_{}".format(i)).split(" ")))
 
     return technical_skill_kw, functional_skill_kw, process_skill_kw
-
-
-def get_skill_branches(
-        job_title,
-        technical_skill_kw,
-        functional_skill_kw,
-        process_skill_kw):
-    """
-    Returns the requested skill_branch for each skill type from demand.
-
-    Args:
-        job_title(string): Requested Job title.
-        technical_skill_kw(list): keywords present in technical skill in demand.
-        functional_skill_kw(list): keywords present in functional skill in demand.
-        process_skill_kw(list): keywords present in process skill in demand.
-    """
-    skill_tree1 = json.load(
-        open("new_tree.json",
-            "r"))
-    # By observing the skill tree it looks like 
-    # unit1-unit3 are Technical skillls
-    # unit4-unit6 are Functional skillls
-    # unit7 is for the Process skills
-    matched_skills = {"technical": [], "functional": [], "process": []}
-    for skill in skill_tree1:
-        if skill["unit"] in ["unit_1", "unit_2", "unit_3"]:
-            for each_kw in technical_skill_kw:
-                if each_kw in skill.values() and each_kw:
-                    matched_skills["technical"].append(skill)
-        if skill["unit"] in ["unit_4", "unit_5", "unit_6"]:
-            for each_kw in functional_skill_kw:
-                if each_kw in skill.values() and each_kw:
-                    matched_skills["functional"].append(skill)
-        if skill["unit"] in "unit_7":
-            for each_kw in process_skill_kw:
-                if each_kw in skill.values() and each_kw:
-                    matched_skills["process"].append(skill)
-
-    return matched_skills.get("technical"), matched_skills.get(
-        "functional"), matched_skills.get("process")
+    # except AttributeError:
+    #     pass
 
 def calculate_serviceline_score(match_percentage, demand):
     """
@@ -117,38 +82,6 @@ def calculate_serviceline_score(match_percentage, demand):
 
     return emp_tuple_list
 
-def match_demand_skills(
-        emp_id,
-        each_emp_skills,
-        skill_branches,
-        match_dict,
-        serviceline_weightage):
-    """
-    Assigns the match % by mapping skills from demand to each employee.
-
-    Args:
-        emp_id(string): Employee id
-        each_emp_skills(dict): dict object of skills for each employee.
-        skill_branches(dict): dict object of skill branches obtained from demand.
-        match_dict(dict): dict onject of the calculated fitment %.
-        serviceline_weightage(dict): dict object of the weightage obtained from demand.
-    """
-    match_percentage = match_dict
-    for each_emp_skill in each_emp_skills:
-        for branch_name, each_branch in skill_branches.items():
-            for each_skill in each_branch:
-                intersection_value = list(set(each_skill.values())& set(each_emp_skill.values()))
-                if (each_emp_skill.get("skill") in intersection_value and each_emp_skill.get("skill")) or (each_emp_skill.get("sub_unit_3") in intersection_value and each_emp_skill.get("sub_unit_3")):
-                    match_percentage[emp_id]["matched_skills"].append(each_emp_skill)
-                    # Max skill level is considered 5.
-                    weightage = serviceline_weightage.get("{}_weight".format(
-                                            branch_name)) * 0.6 + ((int(each_emp_skill["skill_level"]) - 1) / 4) * serviceline_weightage.get("{}_weight".format(branch_name)) * 0.4
-                    if weightage > match_percentage[emp_id]["serviceline_weightage"]["{}_skill".format(branch_name)]:
-                        match_percentage[emp_id]["serviceline_weightage"]["{}_skill".format(branch_name)] = weightage
-    
-    # Removing duplicates from matched skills.
-    match_percentage[emp_id]["matched_skills"] = [dict(t) for t in {tuple(d.items()) for d in match_percentage[emp_id].get("matched_skills")}]
-    return match_percentage
 
 def get_skill_tuple(each_emp):
     """
@@ -160,35 +93,46 @@ def get_skill_tuple(each_emp):
     emp_skill_tuple = {"technical": [], "functional": [], "process": []}
     for skill in each_emp.get("skills"):
         if skill["unit"] in ["unit_1", "unit_2", "unit_3"]:
-            emp_skill_tuple["technical"].append((skill.get("skill",""),skill.get("skill_level")))
+            emp_skill_tuple["technical"].append((''.join(skill.get("skill","").split(" ")),skill.get("skill_level")))
         if skill["unit"] in ["unit_4", "unit_5", "unit_6"]:
-            emp_skill_tuple["functional"].append((skill.get("skill",""),skill.get("skill_level")))
+            emp_skill_tuple["functional"].append((''.join(skill.get("skill","").split(" ")),skill.get("skill_level")))
         if skill["unit"] in "unit_7":
-            emp_skill_tuple["process"].append((skill.get("skill",""),skill.get("skill_level")))
+            emp_skill_tuple["process"].append((''.join(skill.get("skill","").split(" ")),skill.get("skill_level")))
 
     return emp_skill_tuple["technical"], emp_skill_tuple["functional"],emp_skill_tuple["process"]
 
 def skill_match(request, available):
+    try:
+        if not request or not available:
+            return 0
+        available_skills,weightage_skills = [],[]
+        for skill, weightage in available:
+            available_skills.append(related_skill_vectors.get_vector(skill.lower().replace(" ","")))
+            weightage_skills.append(int(weightage))
 
-    requested_skill = np.array(word_vectors.get_vector(request))
-    present_skills, skill_level = preprocess_supply(available)
-    similarities = word_vectors.cosine_similarities(requested_skill, available_skills)
-    score = similarities * skill_level
+        available_skills = np.asarray(available_skills, dtype=np.float32)
+        weightage_skills = np.asarray(weightage_skills, dtype=np.float32)
+        requested_skill = np.array(related_skill_vectors.get_vector(request))
+        weightage_skills = weightage_skills / 5.
+        similarities = related_skill_vectors.cosine_similarities(requested_skill, available_skills)
+        score = similarities * weightage_skills
 
-    return max(score)
+        return max(score)
+    except KeyError:
+        return 0
 
 def score_skill(request_skill, employee_skill, weight):
 
     skill_score = []
-    if len(request_skill) < 1):
+    if len(request_skill) < 1:
         skill_score.append(1)
-    if len(request_skill) < 1):
+    if len(request_skill) < 1:
         skill_score.append(0)
     else:
         for skill in request_skill:
             skill_score.append(skill_match(skill,employee_skill))
     skill_score = max(skill_score)
-    employee_skill.append(skill_value*weight)
+    employee_skill.append(skill_score*weight)
     return  employee_skill
 
 def get_emp_wieghtage(demand, serviceline_weightage):
@@ -202,8 +146,7 @@ def get_emp_wieghtage(demand, serviceline_weightage):
 
     bench_age_list = [each.get("bench_ageing", 0)
                       for each in supply_dict.values()]
-    rank_list = [int(each.get("rank", 0))
-                 for each in supply_dict.values()]
+    max_rank = 5
     exp_list = [each.get("experience", 0)
                 for each in supply_dict.values()]
     for emp_id,each_emp in supply_dict.items():    
@@ -213,7 +156,6 @@ def get_emp_wieghtage(demand, serviceline_weightage):
                 "sub_service_line": each_emp.get("sub_service_line"),
                 "smu": each_emp.get("smu")
             },
-            "matched_skills":[],
             "serviceline_weightage": {
                 "experience": 0,
                 "location": 0,
@@ -238,11 +180,9 @@ def get_emp_wieghtage(demand, serviceline_weightage):
                 "location_weight", 0)
 
         # Calculating % for rank
-        num = max(rank_list) - \
-            int(each_emp.get("rank",0))
-        den = max(rank_list) - min(rank_list)
+        num = max_rank - abs(int(each_emp.get("rank",0)) - int(demand.get("rank",0)))
         match_percentage[emp_id]["serviceline_weightage"]["rank"] = (
-            num / den) * serviceline_weightage.get("rank_weight", 0)
+            num / max_rank) * serviceline_weightage.get("rank_weight", 0)
 
         # Calculating % for bench ageing
         match_percentage[emp_id]["serviceline_weightage"]["bench_ageing"] = (
@@ -254,26 +194,16 @@ def get_emp_wieghtage(demand, serviceline_weightage):
         technical_skill_kw, functional_skill_kw, process_skill_kw = get_skill_kws(
             demand)
 
-        technical_skill_branch, functional_skill_branch, process_skill_branch = get_skill_branches(
-            demand.get("job_title"), technical_skill_kw, functional_skill_kw, process_skill_kw)
-
         technical_tuple, functional_tuple, process_tuple = get_skill_tuple(each_emp)
 
         technical_score = score_skill(technical_skill_kw, technical_tuple, serviceline_weightage.get("technical_weight"))
         functional_score = score_skill(functional_skill_kw, functional_tuple, serviceline_weightage.get("functional_weight"))
         process_score = score_skill(process_skill_kw, process_tuple, serviceline_weightage.get("process_weight"))
-        
-        skill_branches = {
-            "technical": technical_skill_branch,
-            "functional": functional_skill_branch,
-            "process": process_skill_branch
-        }
-        match_percentage = match_demand_skills(
-            emp_id,
-            each_emp["skills"],
-            skill_branches,
-            match_percentage,
-            serviceline_weightage)
+
+        match_percentage[emp_id]["serviceline_weightage"]["technical_skill"] = technical_score[-1]
+        match_percentage[emp_id]["serviceline_weightage"]["functional_skill"] = functional_score[-1]
+        match_percentage[emp_id]["serviceline_weightage"]["process_skill"] = process_score[-1]
+
         match_percentage[emp_id]["fitment_percentage"] = round(sum(
         match_percentage[emp_id]["serviceline_weightage"].values()),3)
     return calculate_serviceline_score(match_percentage, demand)
@@ -293,8 +223,8 @@ if __name__ == "__main__":
         "technical_skill_1": "microsoft office",
         "technical_skill_2": "sdlc",
         "technical_skill_3": "",
-        "functional_skill_1": "risk analysis",
-        "functional_skill_2": "analytics",
+        "functional_skill_1": "",
+        "functional_skill_2": "risk analytics",
         "functional_skill_3": "accounting",
         "process_skill_1": "communication",
         "process_skill_2": "documentation",
@@ -322,7 +252,7 @@ if __name__ == "__main__":
         "technical_skill_1": "seo",
         "technical_skill_2": "googleadsense",
         "technical_skill_3": "",
-        "functional_skill_1": "advanced excel",
+        "functional_skill_1": "excel",
         "functional_skill_2": "",
         "functional_skill_3": "",
         "process_skill_1": "communication",
@@ -365,4 +295,4 @@ if __name__ == "__main__":
         'functional_weight': 20,
         'process_weight': 5
     }
-    mapping(demand1)
+    mapping(demand)
