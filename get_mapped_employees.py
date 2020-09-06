@@ -25,6 +25,8 @@ def mapping(demand):
     items = sorted(emp_tuple_list, key=itemgetter(3, 2), reverse=True)
     sorted_by_fitment_percentage = sorted(emp_tuple_list, key=itemgetter(2), reverse=True)
     # items = sorted(emp_tuple_list, key=itemgetter(3, 2), reverse=True)
+    for each in sorted_by_fitment_percentage:
+        print(each[2])
     return items, sorted_by_fitment_percentage
 
 
@@ -64,18 +66,24 @@ def get_skill_branches(
     skill_tree1 = json.load(
         open("new_tree.json",
             "r"))
-
+    # By observing the skill tree it looks like 
+    # unit1-unit3 are Technical skillls
+    # unit4-unit6 are Functional skillls
+    # unit7 is for the Process skills
     matched_skills = {"technical": [], "functional": [], "process": []}
     for skill in skill_tree1:
-        for each_kw in technical_skill_kw:
-            if each_kw in skill.values() and each_kw:
-                matched_skills["technical"].append(skill)
-        for each_kw in functional_skill_kw:
-            if each_kw in skill.values() and each_kw:
-                matched_skills["functional"].append(skill)
-        for each_kw in process_skill_kw:
-            if each_kw in skill.values() and each_kw:
-                matched_skills["process"].append(skill)
+        if skill["unit"] in ["unit_1", "unit_2", "unit_3"]:
+            for each_kw in technical_skill_kw:
+                if each_kw in skill.values() and each_kw:
+                    matched_skills["technical"].append(skill)
+        if skill["unit"] in ["unit_4", "unit_5", "unit_6"]:
+            for each_kw in functional_skill_kw:
+                if each_kw in skill.values() and each_kw:
+                    matched_skills["functional"].append(skill)
+        if skill["unit"] in "unit_7":
+            for each_kw in process_skill_kw:
+                if each_kw in skill.values() and each_kw:
+                    matched_skills["process"].append(skill)
 
     return matched_skills.get("technical"), matched_skills.get(
         "functional"), matched_skills.get("process")
@@ -135,6 +143,24 @@ def match_demand_skills(
     # Removing duplicates from matched skills.
     match_percentage[emp_id]["matched_skills"] = [dict(t) for t in {tuple(d.items()) for d in match_percentage[emp_id].get("matched_skills")}]
     return match_percentage
+
+def get_skill_tuple(each_emp):
+    """
+    By observing the skill tree it looks like 
+    unit1-unit3 are Technical skillls
+    unit4-unit6 are Functional skillls
+    unit7 is for the Process skills
+    """
+    emp_skill_tuple = {"technical": [], "functional": [], "process": []}
+    for skill in each_emp.get("skills"):
+        if skill["unit"] in ["unit_1", "unit_2", "unit_3"]:
+            emp_skill_tuple["technical"].append((skill.get("skill",""),skill.get("skill_level")))
+        if skill["unit"] in ["unit_4", "unit_5", "unit_6"]:
+            emp_skill_tuple["functional"].append((skill.get("skill",""),skill.get("skill_level")))
+        if skill["unit"] in "unit_7":
+            emp_skill_tuple["process"].append((skill.get("skill",""),skill.get("skill_level")))
+
+    return emp_skill_tuple["technical"], emp_skill_tuple["functional"],emp_skill_tuple["process"]
 
 
 def get_emp_wieghtage(demand, serviceline_weightage):
@@ -203,6 +229,7 @@ def get_emp_wieghtage(demand, serviceline_weightage):
         technical_skill_branch, functional_skill_branch, process_skill_branch = get_skill_branches(
             demand.get("job_title"), technical_skill_kw, functional_skill_kw, process_skill_kw)
 
+        technical_tuple, functional_tuple, process_tuple = get_skill_tuple(each_emp)
         skill_branches = {
             "technical": technical_skill_branch,
             "functional": functional_skill_branch,
