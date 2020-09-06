@@ -63,18 +63,18 @@ function sort_by_percentage()
     console.log("sort_by_percentage")
 
     var sorted_table = document.getElementsByClassName("sorting_by_percentage")[0];
-    var table = document.getElementsByClassName("emp_table")[0];
+    var table = document.getElementsByClassName("sorting_by_both")[0];
     var chbox = document.getElementById("percentage")
 
     if(chbox.checked)
     {
         console.log("in if")
         
-        sorted_table.style.display == 'block';
-        table.style.display == 'none';
+        sorted_table.style.display = 'block';
+        table.style.display = 'none';
     }
     else{
-        sorted_table.style.display == 'none';
-        table.style.display == 'block';
+        sorted_table.style.display = 'none';
+        table.style.display = 'block';
     }
 }
