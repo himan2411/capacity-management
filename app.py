@@ -27,6 +27,10 @@ def supply():
                 fitment_score[item[0]] = item[2]
             #traverse over fitment dictionary to get other parameters
             print(fitment_score.keys())
+            print("-------------------------------------------------------------")
+            print(emp_list_by_percentage)
+            print("-------------------------------------------------------------")
+
             data = []
             for emp_id in fitment_score.keys():
                 row = {}
@@ -53,7 +57,7 @@ def supply():
         except Exception as e:
             emp_list = mapping(form)
             print(e)
-    return render_template("form.html", data=data , request=form)
+    return render_template("form.html", data=data , request=form, emp_list_by_percentage=emp_list_by_percentage)
     
 @app.route('/forward', methods = ['POST'])
 def forward():
