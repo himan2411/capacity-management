@@ -60,7 +60,7 @@ def get_skill_branches(
         process_skill_kw(list): keywords present in process skill in demand.
     """
     skill_tree1 = json.load(
-        open("skill_tree1.json",
+        open("new_tree.json",
             "r"))
 
     matched_skills = {"technical": [], "functional": [], "process": []}
@@ -78,11 +78,10 @@ def get_skill_branches(
     return matched_skills.get("technical"), matched_skills.get(
         "functional"), matched_skills.get("process")
 
-def calculate_serviceline_score(match_percentage,demand):
+def calculate_serviceline_score(match_percentage, demand):
     """
     """
     for emp_id, each_item in match_percentage.items():
-        each_item["serviceline_match"] = 0
         if each_item["serviceline_info"]["service_line"] == demand["requestor_serviceline"].lower():
             each_item["serviceline_match"] += 1
             if each_item["serviceline_info"]["sub_service_line"] == demand["requestor_sub_serviceline"].lower():
@@ -142,12 +141,12 @@ def get_emp_wieghtage(demand, serviceline_weightage):
     Args:
         demand(dict): Dictionary which contains demand info.
     """
-    supply_dict = json.load(open("supply.json", "r"))
+    supply_dict = json.load(open("new_supply.json", "r"))
     match_percentage = {}
 
     bench_age_list = [each.get("bench_ageing", 0)
                       for each in supply_dict.values()]
-    rank_list = [int(each.get("rank", 0).lower().replace("rank_", ""))
+    rank_list = [int(each.get("rank", 0))
                  for each in supply_dict.values()]
     exp_list = [each.get("experience", 0)
                 for each in supply_dict.values()]
@@ -168,7 +167,8 @@ def get_emp_wieghtage(demand, serviceline_weightage):
                 "functional_skill": 0,
                 "process_skill": 0
             },
-            "fitment_percentage": 0
+            "fitment_percentage": 0,
+            "serviceline_match": 0
         }  
         # Calculating % for experience
         match_percentage[emp_id]["serviceline_weightage"]["experience"] = (
@@ -183,7 +183,7 @@ def get_emp_wieghtage(demand, serviceline_weightage):
 
         # Calculating % for rank
         num = max(rank_list) - \
-            int(each_emp.get("rank").lower().replace("rank_", ""))
+            int(each_emp.get("rank",0))
         den = max(rank_list) - min(rank_list)
         match_percentage[emp_id]["serviceline_weightage"]["rank"] = (
             num / den) * serviceline_weightage.get("rank_weight", 0)
@@ -214,35 +214,93 @@ def get_emp_wieghtage(demand, serviceline_weightage):
             serviceline_weightage)
         match_percentage[emp_id]["fitment_percentage"] = sum(
         match_percentage[emp_id]["serviceline_weightage"].values())
-    return calculate_serviceline_score(match_percentage,demand)
+    return calculate_serviceline_score(match_percentage, demand)
 
 if __name__ == "__main__":
+    
     demand = {
-    "requestor_serviceline": "serviceline1",
-    "requestor_sub_serviceline": "subserviceline3",
-    "requestor_smu": "smu2",
-    "job_title": "financial risk analyst",
-    "rank": "rank_3",
-    "required_resources": 1,
-    "country": "india",
-    "location": "bangalore",
-    "alternate_location": "",
-    "technical_skill_1": "microsoft office",
-    "technical_skill_2": "sdlc",
-    "technical_skill_3": "",
-    "functional_skill_1": "risk analysis",
-    "functional_skill_2": "analytics",
-    "functional_skill_3": "accounting",
-    "process_skill_1": "effective communication",
-    "process_skill_2": "documentation",
-    "process_skill_3": "team skill",
-    "experience": 8,
-    'location_weight': 30,
-    'experience_weight': 10,
-    'bench_weight': 0,
-    'rank_weight': 10,
-    'technical_weight': 10,
-    'functional_weight': 30,
-    'process_weight': 10
+        "requestor_serviceline": "serviceline1",
+        "requestor_sub_serviceline": "subserviceline3",
+        "requestor_smu": "smu2",
+        "job_title": "financial risk analyst",
+        "rank": 3,
+        "required_resources": 1,
+        "country": "india",
+        "location": "bangalore",
+        "alternate_location": "",
+        "technical_skill_1": "microsoft office",
+        "technical_skill_2": "sdlc",
+        "technical_skill_3": "",
+        "functional_skill_1": "risk analysis",
+        "functional_skill_2": "analytics",
+        "functional_skill_3": "accounting",
+        "process_skill_1": "communication",
+        "process_skill_2": "documentation",
+        "process_skill_3": "team skill",
+        "experience": 4,
+        'location_weight': 30,
+        'experience_weight': 10,
+        'bench_weight': 0,
+        'rank_weight': 10,
+        'technical_weight': 10,
+        'functional_weight': 30,
+        'process_weight': 10
+    }
+
+    demand1 = {
+        "requestor_serviceline": "serviceline2",
+        "requestor_sub_serviceline": "subserviceline3",
+        "requestor_smu": "smu1",
+        "job_title": "Digital Marketing Expert",
+        "rank": 4,
+        "required_resources": 2,
+        "country": "india",
+        "location": "mumbai",
+        "alternate_location": "",
+        "technical_skill_1": "seo",
+        "technical_skill_2": "googleadsense",
+        "technical_skill_3": "",
+        "functional_skill_1": "advanced excel",
+        "functional_skill_2": "",
+        "functional_skill_3": "",
+        "process_skill_1": "communication",
+        "process_skill_2": "presentation skills",
+        "process_skill_3": "",
+        "experience": 2,
+        'location_weight': 40,
+        'experience_weight': 10,
+        'bench_weight': 10,
+        'rank_weight': 0,
+        'technical_weight': 10,
+        'functional_weight': 25,
+        'process_weight': 5,
+    }
+    demand2 = {
+        "requestor_serviceline": "serviceline3",
+        "requestor_sub_serviceline": "subservicelin1",
+        "requestor_smu": "smu3",
+        "job_title": "UI developer",
+        "rank": 3,
+        "required_resources": 2,
+        "country": "india",
+        "location": "chennai",
+        "alternate_location": "",
+        "technical_skill_1": "vuejs",
+        "technical_skill_2": "mongodb",
+        "technical_skill_3": "",
+        "functional_skill_1": "agile",
+        "functional_skill_2": "sdlc",
+        "functional_skill_3": "",
+        "process_skill_1": "documentation",
+        "process_skill_2": "presentation skills",
+        "process_skill_3": "",
+        "experience": 3,
+        'location_weight': 40,
+        'experience_weight': 20,
+        'bench_weight': 30,
+        'rank_weight': 0,
+        'technical_weight': 15,
+        'functional_weight': 20,
+        'process_weight': 5
     }
     mapping(demand)

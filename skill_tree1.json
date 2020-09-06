@@ -47,6 +47,13 @@
       "sub_unit_1": "technology",
       "sub_unit_2": "programming",
       "sub_unit_3": "scripting",
+      "skill": "java"
+    },
+    {
+      "unit": "unit 1",
+      "sub_unit_1": "technology",
+      "sub_unit_2": "programming",
+      "sub_unit_3": "scripting",
       "skill": "shell script"
     },
     {
@@ -59,16 +66,9 @@
     {
       "unit": "unit 1",
       "sub_unit_1": "technology",
-      "sub_unit_2": "programming",
-      "sub_unit_3": "scripting",
-      "skill": "power shell"
-    },
-    {
-      "unit": "unit 1",
-      "sub_unit_1": "technology",
       "sub_unit_2": "platform",
       "sub_unit_3": "cloud",
-      "skill": "azure"
+      "skill": "azure functions"
     },
     {
       "unit": "unit 1",
@@ -82,7 +82,7 @@
       "sub_unit_1": "technology",
       "sub_unit_2": "platform",
       "sub_unit_3": "cloud",
-      "skill": "aws"
+      "skill": "aws developer"
     },
     {
       "unit": "unit 1",
