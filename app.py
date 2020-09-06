@@ -44,7 +44,24 @@ def supply():
                 row['bench'] = supply_dict[emp_id]["bench_ageing"]
                 data.append(row)
             
-            print(data)
+            percent_data = []
+            fitment_score_percent = {}
+            for item in emp_list_by_percentage:
+                fitment_score_percent[item[0]] = item[2]
+            
+            for emp_id in fitment_score_percent.keys():
+                row = {}
+                row['e_id'] = emp_id
+                row['fitment'] = round(fitment_score[emp_id],2)
+                row['smu_info'] = supply_dict[emp_id]["service_line"] + "->" + supply_dict[emp_id]["sub_service_line"] + "->" + supply_dict[emp_id]["smu"]
+                row['skills'] = [i['skill'] for i in supply_dict[emp_id]["skills"]]
+                row['experience'] = supply_dict[emp_id]["experience"]
+                row['rank'] = supply_dict[emp_id]["rank"]
+                row['location'] = supply_dict[emp_id]["city"]
+                row['bench'] = supply_dict[emp_id]["bench_ageing"]
+                percent_data.append(row)
+            
+            print(percent_data)
             with open("response.txt", "a") as resp:
                 resp.write("# Demand\n")
                 # resp.write(json.dumps(form))
@@ -56,7 +73,7 @@ def supply():
                 resp.write(emp_list)
         except Exception as e:
             print(e)
-    return render_template("supply.html", data=data , request=form, emp_list_by_percentage=emp_list_by_percentage)
+    return render_template("supply.html", data=data , request=form, emp_list_by_percentage=percent_data)
     
 @app.route('/forward', methods = ['POST'])
 def forward():

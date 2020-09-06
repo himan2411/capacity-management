@@ -18,13 +18,13 @@
                 <option value="best_bet">Best Bet</option>
               </select>
               <input type="checkbox" onchange="sort_by_percentage()" id="percentage"  name="sort_percentage" style="width: 20px;height: 20px;" >
-              Sort by percentage
+              Sort by only Percentage
               </input>
-              <form>
-              {%endif %}
+            {%endif %}
+
           {% if emp_list_by_percentage %}
-          <form  action="http://localhost:5555/forward" class="sorting_by_percentage" method = "POST" enctype = "multipart/form-data" style="padding:0px;">
-            <div class="table-wrap" style="width: 80%; position: absolute; left: 10%;">
+          <form  action="http://localhost:5555/forward" class="sorting_by_percentage"method = "POST" enctype = "multipart/form-data" style="padding:0px; display: none;">
+            <div class="table-wrap"   style="width: 80%; position: absolute; left: 10%;">
                   <table name="employees" style="width: 100%;" class="emp_table_sorted">
                     <tbody>
                       <tr>
@@ -60,9 +60,10 @@
           </div>
           
         </form>
-          {% endif %} 
+        {% endif %} 
+
           {% if data %}
-          <form action="http://localhost:5555/forward" method = "POST" enctype = "multipart/form-data" style="padding:0px ;">
+          <form action="http://localhost:5555/forward" method = "POST" class="sorting_by_both" enctype = "multipart/form-data" style="padding:0px ;">
             <div class="table-wrap" style="width: 80%; position: absolute; left: 10%;">
                   <table name="employees" style="width: 100%;" class="emp_table">
                     <tbody>
