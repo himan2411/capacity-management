@@ -14,7 +14,7 @@
             <h1>Resource Requirements</h1>  
             <div style="padding-top: 3px;">
               <select name="requestor_serviceline" onchange="myFunction()">
-                <option value="ServiceLine1" selected>ServiceLine1</option>
+                <option value="ServiceLine1" value={{form['requestor_serviceline']}} selected>ServiceLine1</option>
                 <option value="ServiceLine2">ServiceLine2</option>
                 <option value="ServiceLine3">ServiceLine3</option>
               </select>
@@ -58,21 +58,21 @@
                 <input class="name" type="text" name="rank" placeholder="Rank Level" />
                 <input class="name" type="text" name="required_resources" placeholder="Vacancy" />
               </div>
-              <div class="slidecontainer"  >
-                <p>Location Wieght&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experience weight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bench Ageing Weight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rank Weight</p>
-                <input type="range" min="1" max="100" value="50" name= "location_weight" class="slider_orig" style="width: 100px; padding: 0px;" id="myRange_1">
-                <input type="range" min="1" max="100" value="50" name= "experience_weight" class="slider_orig" style="width: 100px; margin-left: 30px; padding: 0px;" id="myRange_2">
-                <input type="range" min="1" max="100" value="50" name= "bench_weight" class="slider_orig" style="width: 100px; margin-left: 54px; padding: 0px;" id="myRange_3">
-                <input type="range" min="1" max="100" value="50" name= "rank_weight" class="slider_orig" style="width: 100px; margin-left: 54px; padding: 0px;" id="myRange_7">
-            </div>
-            <div class="slidecontainer"  >
-                <p>Technical Skill Wieght&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functional Skill wieght&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process Skill Wieght</p>
-                <input type="range" min="1" max="100" value="50" name= "technical_weight" class="slider_orig" style="width: 100px; padding: 0px;" id="myRange_4">
-                <input type="range" min="1" max="100" value="50" name= "functional_weight" class="slider_orig" style="width: 100px;margin-left: 50px;padding: 0px;" id="myRange_5">
-                <input type="range" min="1" max="100" value="50" name= "process_weight" class="slider_orig" style="width: 100px;margin-left: 77px;padding: 0px;" id="myRange_6">
-            </div>
+              <h4>Weights<span>*</span></h4>
+              <div class="wieght-block">
+                <input class="name" id="myRange_1" value="30" type="text" name="location_weight" placeholder="For location" onchange="checkSum()" />
+                <input class="name" id="myRange_2" value="10" type="text" name="experience_weight" placeholder="For experience" onchange="checkSum()"/>
+                <input class="name" id="myRange_3" value="0" type="text" name="bench_weight" placeholder="For bench" onchange="checkSum()"/>
+                <input class="name" id="myRange_4" value="10" type="text" name="rank_weight" placeholder="For rank" onchange="checkSum()"/>
+              </div>
+              <h4>Skill Weights<span>*</span></h4>
+              <div class="wieght-block">
+                <input class="name" id="myRange_5" value="30" type="text" name="technical_weight" placeholder="For technical" onchange="checkSum()"/>
+                <input class="name" id="myRange_6" value="10" type="text" name="functional_weight" placeholder="For functional" onchange="checkSum()"/>
+                <input class="name" id="myRange_7" value="10" type="text" name="process_weight" placeholder="For process" onchange="checkSum()"/>
+              </div>
               <div class="btn-block"></div>
-                <button type="submit" >Send Request</button>
+                <button type="submit" id="submit_btn" >Send Request</button>
               </div>
               {% if data %}
               <select name="requestor_serviceline" id="fitment_dropdown" onchange="change_dispaly()">
@@ -90,15 +90,15 @@
                   <table name="employees" style="width: 100%;" class="emp_table">
                     <tbody>
                       <tr>
-                          <td style="width: 5%; height: 60px;">  </td>
-                          <td style="width: 15%;"  > Id </td> 
-                          <td style="width: 15%;" > Fitment </td>
-                          <td style="width: 15%;" > SMU </td>
-                          <td style="width: 15%;" > Skilll </td>
-                          <td style="width: 15%;" > Experience </td>
-                          <td style="width: 15%;" > Rank </td>
-                          <td style="width: 15%;" > Location </td>
-                          <td style="width: 15%;" > Bench Ageing </td>
+                          <td style="width: 1%; height: 60px;">  </td>
+                          <td style="width: 7%;"  > Id </td> 
+                          <td style="width: 5%;" > Fitment </td>
+                          <td style="width: 20%;" > SMU </td>
+                          <td style="width: 51%;" > Skilll </td>
+                          <td style="width: 5%;" > Experience </td>
+                          <td style="width: 4%;" > Rank </td>
+                          <td style="width: 11%;" > Location </td>
+                          <td style="width: 5%;" >Ageing </td>
                       </tr>
 
 
@@ -106,14 +106,14 @@
 
                     <tr>
                       <td class="table-cell"><input type="checkbox" id="vehicle1"  name={{row['e_id'] }} style="width: 20px;height: 20px;" ></td>
-                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['e_id']  }}</td> 
-                        <td class="table-cell" style="width: 15%;height: 15%; overflow-y: auto;" >{{row['fitment']  }}</td>
-                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['smu_info']  }}</td> 
-                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['skills']  }}</td>
-                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['experience']  }}</td> 
-                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['rank']  }}</td> 
-                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['location']  }}</td>
-                        <td class="table-cell" style="width: 15%; height: 15%; overflow-y: auto;" >{{row['bench']  }}</td>
+                        <td class="table-cell" style="width: 7%; height: 15%; overflow-y: auto;" >{{row['e_id']  }}</td> 
+                        <td class="table-cell" style="width: 5%;height: 15%; overflow-y: auto;" >{{row['fitment']  }}</td>
+                        <td class="table-cell" style="width: 20%; height: 15%; overflow-y: auto;" >{{row['smu_info']  }}</td> 
+                        <td class="table-cell" style="width: 51%; height: 15%; overflow-y: auto;" >{{row['skills']  }}</td>
+                        <td class="table-cell" style="width: 5%; height: 15%; overflow-y: auto;" >{{row['experience']  }}</td> 
+                        <td class="table-cell" style="width: 4%; height: 15%; overflow-y: auto;" >{{row['rank']  }}</td> 
+                        <td class="table-cell" style="width: 11%; height: 15%; overflow-y: auto;" >{{row['location']  }}</td>
+                        <td class="table-cell" style="width: 5%; height: 15%; overflow-y: auto;" >{{row['bench']  }}</td>
                     </tr>
                   </tbody>
             {% endfor %}

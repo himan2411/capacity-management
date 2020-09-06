@@ -34,3 +34,16 @@ function myFunction() {
         }
     }
   }   
+
+  function checkSum() {
+    var sum = +(document.getElementById("myRange_1").value) + +(document.getElementById("myRange_2").value) +
+     +(document.getElementById("myRange_3").value) + +(document.getElementById("myRange_4").value) +
+     +(document.getElementById("myRange_5").value) + +(document.getElementById("myRange_6").value) + +(document.getElementById("myRange_7").value);
+     
+     if( sum != 100){
+        document.getElementById("submit_btn").disabled = true;
+     }
+     else{
+        document.getElementById("submit_btn").disabled = false;
+     }
+}

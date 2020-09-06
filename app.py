@@ -34,7 +34,7 @@ def supply():
                 row['fitment'] = round(fitment_score[emp_id],2)
                 row['smu_info'] = supply_dict[emp_id]["service_line"] + "->" + supply_dict[emp_id]["sub_service_line"] + "->" + supply_dict[emp_id]["smu"]
                 row['skills'] = [i['skill'] for i in supply_dict[emp_id]["skills"]]
-                row['experience'] = supply_dict[emp_id]["years_of_experience"]
+                row['experience'] = supply_dict[emp_id]["experience"]
                 row['rank'] = supply_dict[emp_id]["rank"]
                 row['location'] = supply_dict[emp_id]["city"]
                 row['bench'] = supply_dict[emp_id]["bench_ageing"]
@@ -51,8 +51,9 @@ def supply():
                     resp.write("{} \t\t {} \t\t {} \t\t {} \t {}\n".format(each_item[0], each_item[2], each_item[1]["serviceline_info"]["service_line"],each_item[1]["serviceline_info"]["sub_service_line"],each_item[1]["serviceline_info"]["smu"]))
                 resp.write(emp_list)
         except Exception as e:
+            emp_list = mapping(form)
             print(e)
-    return render_template("form.html", data=data , request=form)
+    return render_template("form.html", data=data , request=form, form=form)
     
 @app.route('/forward', methods = ['POST'])
 def forward():

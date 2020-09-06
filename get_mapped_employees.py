@@ -78,7 +78,7 @@ def get_skill_branches(
     return matched_skills.get("technical"), matched_skills.get(
         "functional"), matched_skills.get("process")
 
-def calculate_serviceline_score(match_percentage):
+def calculate_serviceline_score(match_percentage,demand):
     """
     """
     for emp_id, each_item in match_percentage.items():
@@ -214,7 +214,7 @@ def get_emp_wieghtage(demand, serviceline_weightage):
             serviceline_weightage)
         match_percentage[emp_id]["fitment_percentage"] = sum(
         match_percentage[emp_id]["serviceline_weightage"].values())
-    return calculate_serviceline_score(match_percentage)
+    return calculate_serviceline_score(match_percentage,demand)
 
 if __name__ == "__main__":
     demand = {
