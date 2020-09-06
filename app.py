@@ -26,10 +26,6 @@ def supply():
             for item in emp_list:
                 fitment_score[item[0]] = item[2]
             #traverse over fitment dictionary to get other parameters
-            print(fitment_score.keys())
-            print("-------------------------------------------------------------")
-            print(emp_list_by_percentage)
-            print("-------------------------------------------------------------")
 
             data = []
             for emp_id in fitment_score.keys():

@@ -1,7 +1,13 @@
 # Main file to find the matching employees as per demand.
 # https://stackoverflow.com/questions/44458629/how-to-make-nested-for-loop-more-pythonic
 import json
+import skill_score 
 from operator import itemgetter, attrgetter
+import numpy as np
+from gensim.models import KeyedVectors
+
+
+word_vectors = KeyedVectors.load("/home/himanshu/Downloads/capacity-management/model.kv", mmap='r')
 
 
 def mapping(demand):
@@ -162,6 +168,28 @@ def get_skill_tuple(each_emp):
 
     return emp_skill_tuple["technical"], emp_skill_tuple["functional"],emp_skill_tuple["process"]
 
+def skill_match(request, available):
+
+    requested_skill = np.array(word_vectors.get_vector(request))
+    present_skills, skill_level = preprocess_supply(available)
+    similarities = word_vectors.cosine_similarities(requested_skill, available_skills)
+    score = similarities * skill_level
+
+    return max(score)
+
+def score_skill(request_skill, employee_skill, weight):
+
+    skill_score = []
+    if len(request_skill) < 1):
+        skill_score.append(1)
+    if len(request_skill) < 1):
+        skill_score.append(0)
+    else:
+        for skill in request_skill:
+            skill_score.append(skill_match(skill,employee_skill))
+    skill_score = max(skill_score)
+    employee_skill.append(skill_value*weight)
+    return  employee_skill
 
 def get_emp_wieghtage(demand, serviceline_weightage):
     """
@@ -230,6 +258,11 @@ def get_emp_wieghtage(demand, serviceline_weightage):
             demand.get("job_title"), technical_skill_kw, functional_skill_kw, process_skill_kw)
 
         technical_tuple, functional_tuple, process_tuple = get_skill_tuple(each_emp)
+
+        technical_score = score_skill(technical_skill_kw, technical_tuple, serviceline_weightage.get("technical_weight"))
+        functional_score = score_skill(functional_skill_kw, functional_tuple, serviceline_weightage.get("functional_weight"))
+        process_score = score_skill(process_skill_kw, process_tuple, serviceline_weightage.get("process_weight"))
+        
         skill_branches = {
             "technical": technical_skill_branch,
             "functional": functional_skill_branch,
