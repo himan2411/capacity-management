@@ -212,8 +212,8 @@ def get_emp_wieghtage(demand, serviceline_weightage):
             skill_branches,
             match_percentage,
             serviceline_weightage)
-        match_percentage[emp_id]["fitment_percentage"] = sum(
-        match_percentage[emp_id]["serviceline_weightage"].values())
+        match_percentage[emp_id]["fitment_percentage"] = round(sum(
+        match_percentage[emp_id]["serviceline_weightage"].values()),3)
     return calculate_serviceline_score(match_percentage, demand)
 
 if __name__ == "__main__":
