@@ -23,7 +23,9 @@ def mapping(demand):
     emp_tuple_list = get_emp_wieghtage(demand, serviceline_weightage)
 
     items = sorted(emp_tuple_list, key=itemgetter(3, 2), reverse=True)
-    return items
+    sorted_by_fitment_percentage = sorted(emp_tuple_list, key=itemgetter(2), reverse=True)
+    # items = sorted(emp_tuple_list, key=itemgetter(3, 2), reverse=True)
+    return items, sorted_by_fitment_percentage
 
 
 def get_skill_kws(demand):
@@ -303,4 +305,4 @@ if __name__ == "__main__":
         'functional_weight': 20,
         'process_weight': 5
     }
-    mapping(demand)
+    mapping(demand1)

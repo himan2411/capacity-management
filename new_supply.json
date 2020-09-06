@@ -846,13 +846,13 @@
 		]
 	},
 	"employee_12": {
-		"rank": 2,
-		"experience": 15,
+		"rank": 3,
+		"experience": 5,
 		"service_line": "serviceline1",
-		"sub_service_line": "subserviceline3",
+		"sub_service_line": "subserviceline2",
 		"smu": "smu1",
 		"country": "india",
-		"city": "bangalore",
+		"city": "surat",
 		"bench_ageing": 5,
 		"skills": [
 			{
@@ -894,62 +894,6 @@
 				"sub_unit_3": "",
 				"skill": "data architecture",
 				"skill_level": 4
-			},
-			{
-				"unit": "unit 1",
-				"sub_unit_1": "technology",
-				"sub_unit_2": "emerging trends",
-				"sub_unit_3": "artificial intelligence",
-				"skill": "machine learning",
-				"skill_level": 4
-			},
-			{
-				"unit": "unit 1",
-				"sub_unit_1": "technology",
-				"sub_unit_2": "emerging trends",
-				"sub_unit_3": "artificial intelligence",
-				"skill": "deep learning",
-				"skill_level": 3
-			},
-			{
-				"unit": "unit 1",
-				"sub_unit_1": "technology",
-				"sub_unit_2": "programming",
-				"sub_unit_3": "scripting",
-				"skill": "python",
-				"skill_level": 3
-			},
-			{
-				"unit": "unit 6",
-				"sub_unit_1": "business analysis",
-				"sub_unit_2": "critical analysis",
-				"sub_unit_3": "",
-				"skill": "problem solving",
-				"skill_level": 2
-			},
-			{
-				"unit": "unit 6",
-				"sub_unit_1": "business analysis",
-				"sub_unit_2": "",
-				"sub_unit_3": "",
-				"skill": "requirement analysis",
-				"skill_level": 3
-			},
-			{
-				"unit": "unit 7",
-				"sub_unit_1": "basic",
-				"sub_unit_2": "soft skills",
-				"sub_unit_3": "",
-				"skill": "presentation skills",
-				"skill_level": 3
-			},
-			{
-				"unit": "unit 7",
-				"sub_unit_1": "basic",
-				"sub_unit_2": "soft skills",
-				"sub_unit_3": "",
-				"skill": "effective communication",
-				"skill_level": 3
 			}
 		]
 	},
