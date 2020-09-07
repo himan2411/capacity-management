@@ -1,9 +1,8 @@
-request,item
-32883,employee_5
-32883,employee_1
-32883,employee_12
-32883,employee_7
-66559,employee_5
-66559,employee_1
-66559,employee_3
-66559,employee_7
+request,item,rating
+financial risk analyst,employee_16,3
+financial risk analyst,employee_36,4
+financial risk analyst,employee_2,4
+financial risk analyst,employee_22,3
+financial advisor,employee_2,4
+financial advisor,employee_28,5
+financial advisor,employee_35,5

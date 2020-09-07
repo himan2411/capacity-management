@@ -2,16 +2,109 @@
 <html>
     <head>
         <title>Home page</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
     <body>
-        Thank you
-        <br>
-        Selected Employees are<br>
-        {% if data %}
-        {{ data }}
+        {% if not request %}
+        <h2>Thank you!</h2>
         {% endif  %}
+        {% if request %}
+        <br>
+        <h3 style="text-align: center;">Please rate Employees based on your current request: {{request['job_title']}}</h3>
+        {% endif  %}
+        <form action="http://localhost:5555/thankyou" method = "POST" enctype = "multipart/form-data">
+            <div class="container" id="container1">
+                <div class="col-md-4"></div>
+            
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="text-center">Employees selected</h4>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p class="lead">
+                                <strong>Employess Ratings</strong>
+                            </p>
+                        </div>
+                        <input class="name" type="text" style="display: none;" name="req_id" value="{{request['job_title']}}" />
+                        <ul class="list-group list-group-flush text-center">
+                            {% for row in data %}
+                            <li class="list-group-item">
+                                <div class="skillLineDefault">
+                                    <div class="skill pull-left text-center">{{row['e_id']}}</div>
+                                    <div class="rating" style="display: none;" id="{{row['div_id']}}">
+                                    </div>
+                                    <input class="name" type="text"  name="{{row['e_id']}}" placeholder="Out of 5" />
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="panel-footer text-center">
+                            <button type="submit" id="submit_btn" class="btn btn-primary btn-lg btn-block">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <style>
+            #container1 {
+                margin-bottom: 120px;
+                padding:20px;
+                background-color:#f5f5f5;
+            }
+        
+            .rating {
+                margin-left: 30px;
+            }
+        
+            div.skill {
+                background: #5cb85c;
+                border-radius: 3px;
+                color: white;
+                font-weight: bold;
+                padding: 3px 4px;
+                width: 100px;
+            }
+        
+            .skillLine {
+                display: inline-block;
+                width: 100%;
+                min-height: 90px;
+                padding: 3px 4px;
+            }
+        
+            skillLineDefault {
+                padding: 3px 4px;
+            }
+        </style>
+        
+        <!-- you need to include the shieldui css and js assets in order for the charts to work -->
+        <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+        <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+        
+        <script type="text/javascript">
+            initializeRatings();
+        
+            function initializeRatings() {
+                
+                $('.rating').shieldRating({
+                    max: 5,
+                    step: 1,
+                    value: 0,
+                    markPreset: false
+                });
+            }
+        </script>
     </body>
 </html>

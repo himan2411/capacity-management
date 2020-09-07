@@ -14,9 +14,11 @@
         
           
         
-
-          <input class="name" style="display: none;" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="request_obj" placeholder="Process skill" value="{{request}}"/>
-          {% if request %}
+        <div id="container">
+          <input class="name" style="display: none;" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="request_obj" value="{{request}}"/>
+          <div style="width: 90%; margin-top: 2%; margin-left: 2%;">
+            <h2 style="text-align: center; color:coral"><b> Current Request </b></h2>
+            {% if request %}
             <table name="request_row" style="width: 100%;" class="request_row">
                 <tbody>
                   <tr>
@@ -30,27 +32,30 @@
                   </tr>
                   <tr>
                     <td style="width: 1%;"  >  {{request['job_title']}}</td> 
-                    <td style="width: 1%;" > {{request['requestor_serviceline']}}>{{request['requestor_sub_serviceline']}}>{{request['requestor_smu']}}   </td>
+                    <td style="width: 3%;" > {{request['requestor_serviceline']}}>{{request['requestor_sub_serviceline']}}>{{request['requestor_smu']}}   </td>
                     <td style="width: 2%;" > {{request['location']}} </td>
                     <td style="width: 2%;" > [{{request['techincal_skill_1']}},{{request['techincal_skill_2']}},{{request['techincal_skill_3']}}] </td>
-                    <td style="width: 3%;" > [{{request['functional_skill_1']}},{{request['functional_skill_2']}},{{request['functional_skill_3']}}] </td>
+                    <td style="width: 2%;" > [{{request['functional_skill_1']}},{{request['functional_skill_2']}},{{request['functional_skill_3']}}] </td>
                     <td style="width: 2%;" > [{{request['process_skill_1']}},{{request['process_skill_2']}},{{request['process_skill_3']}}] </td>
-                    <td style="width: 3%;" >{{request['experience']}} </td>
+                    <td style="width: 2%;" >{{request['experience']}} </td>
                 </tr>
                 </tbody>
               </table>
           {% endif %}
+        </div>
             {% if data %}
+            <div style="text-align: center; margin-top: 50px ; margin-bottom: 30px;">
                 <select name="requestor_serviceline" id="fitment_dropdown" onchange="change_dispaly()">
                   <option value="all" selected>Sorted by ServiceLine then by %</option>
                   <option value="best_fit">Best Fit</option>
                   <option value="stretched_fit">Stretched Fit</option>
                   <option value="best_bet">Best Bet</option>
                 </select>
-                <input type="checkbox" onchange="sort_by_percentage()" id="percentage"  name="sort_percentage" style="width: 20px;height: 20px;" >
+                <input type="checkbox" onchange="sort_by_percentage()" id="percentage"  name="sort_percentage" style="width: 20px;height: 20px; margin-left: 20px;" >
                 Sort by only Percentage
                 </input>
-              {%endif %}
+              </div>
+            {%endif %}
 
             {% if emp_list_by_percentage %}
             <form  action="http://localhost:5555/forward" class="sorting_by_percentage"method = "POST" enctype = "multipart/form-data" style="padding:0px; display: none;">
@@ -88,7 +93,7 @@
               </table>
               <button type="submit" style="margin-left: 47%;">Forward</button>
             </div>
-            
+            <input class="name" style="display: none;" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="request_obj" placeholder="Process skill" value="{{request}}"/>
           </form>
           {% endif %} 
 
@@ -128,8 +133,9 @@
               </table>
               <button type="submit" style="margin-left: 47%;">Forward</button>
             </div>
-            
+            <input class="name" style="display: none;" type="text" style="margin-top: 5px; margin-bottom: 5px;" name="request_obj" placeholder="Process skill" value="{{request}}"/>
           </form>
-            {% endif %}            
+            {% endif %}   
+          </div>         
       </body>
   </html>

@@ -74,8 +74,9 @@
               <div class="btn-block"></div>
                 <button type="submit" id="submit_btn" >Send Request</button>
               </div>
-
-              {% if data %}
+            </form>
+          </div>   
+          {% if data %}
               <select name="requestor_serviceline" id="fitment_dropdown" onchange="change_dispaly()">
                 <option value="all" selected>Sorted by ServiceLine then by %</option>
                 <option value="best_fit">Best Fit</option>
@@ -86,9 +87,7 @@
               Sort by percentage
               </input>
               <form>
-              {%endif %}
-            </form>
-          </div>   
+          {%endif %}
           {% if emp_list_by_percentage %}
           <form  action="http://localhost:5555/forward" class="sorting_by_percentage" method = "POST" enctype = "multipart/form-data" style="padding:0px;">
             <div class="table-wrap" style="width: 80%; position: absolute; left: 10%;">

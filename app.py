@@ -76,6 +76,7 @@ def forward():
     if request.method == 'POST':
         existing_table = pd.read_csv("item_item.csv")
         form = request.form.to_dict()
+        print(form)
         request_obj = eval(form["request_obj"])
         print(form.keys())
         print(request_obj)
@@ -83,11 +84,42 @@ def forward():
         ratings_dict = { "request": [request_obj["job_title"]]* (len(form.keys())-1),
         "item": [i for i in form.keys()][:-1]
         }
+        emp_ids = [i for i in form.keys()][:-1]
+        table = []
+        i = 1
+        for emp_id in emp_ids:
+            row = {}
+            row['e_id'] = emp_id
+            row['div_id'] = 'rate' + str(i)
+            i += 1
+            table.append(row)
+
         new_df = pd.DataFrame(ratings_dict)
-        print(new_df)
+        print(table)
         # existing_table = existing_table.append(new_df) 
         # existing_table.to_csv("item_item.csv",index=False,header=True)
-    return render_template("index.html",data= " ".join([i for i in form.keys()][:-1]))
+    return render_template("index.html",data=table, request=request_obj )
+
+@app.route('/thankyou', methods = ['POST'])
+def thankyou():
+    if request.method == 'POST':
+        existing_table = pd.read_csv("item_item.csv")
+        form = request.form.to_dict()
+        print(form)
+        req_id = (form["req_id"])
+
+
+        ratings_dict = { "request": [req_id]* (len(form.keys())-1),
+        "item": [i for i in form.keys()][1:],
+        "rating": [i for i in form.values()][1:]
+        }
+
+        new_df = pd.DataFrame(ratings_dict)
+        existing_table = existing_table.append(new_df) 
+        print(existing_table)
+
+        existing_table.to_csv("item_item.csv",index=False,header=True)
+    return render_template("thankyou.html")
 
 if __name__ == '__main__':
     app.run()
