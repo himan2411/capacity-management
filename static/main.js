@@ -2,7 +2,7 @@ function myFunction() {
     var x = document.getElementsByName("requestor_serviceline");
     if(x.length >0)
     {
-        if(x[0].value == "ServiceLine1")
+        if(x[0].value == "serviceline1")
         {
             document.getElementById("myRange_1").value = 30
             document.getElementById("myRange_2").value = 10
@@ -12,7 +12,7 @@ function myFunction() {
             document.getElementById("myRange_5").value = 30
             document.getElementById("myRange_6").value = 10
         }
-        if(x[0].value == "ServiceLine2")
+        if(x[0].value == "serviceline2")
         {
             document.getElementById("myRange_1").value = 40
             document.getElementById("myRange_2").value = 10
@@ -22,7 +22,7 @@ function myFunction() {
             document.getElementById("myRange_5").value = 25
             document.getElementById("myRange_6").value = 5
         }
-        if(x[0].value == "ServiceLine3")
+        if(x[0].value == "serviceline3")
         {
             document.getElementById("myRange_1").value = 10
             document.getElementById("myRange_2").value = 20
